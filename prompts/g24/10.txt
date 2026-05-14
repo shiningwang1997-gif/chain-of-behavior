@@ -1,0 +1,43 @@
+Step 1 — Assign Roles
+
+* Input: Four numbers `[a, b, c, d]`
+* Output: Enumerate all possible role assignments
+* Execution:
+
+1. Try all permutations of the four numbers.
+2. Choose one number as the **final numerator** `N_final`.
+3. Assign the remaining three numbers as `(x, y, z)` for building the nested denominator.
+
+---
+
+Step 2 — Build and Evaluate the Nested Denominator
+
+* Input: `x, y, z`
+* Output: All possible nested-denominator values `D_nested`
+* Execution:
+For each triple `(x, y, z)`, evaluate the following four structures:
+
+1. `D1 = (x / y) + z`
+2. `D2 = (x / y) - z`
+3. `D3 = z + (x / y)`
+4. `D4 = z - (x / y)`
+
+Rules:
+
+* Skip any computation where `y = 0` (to avoid division by zero).
+* Skip any candidate where `D_nested = 0` when it will be used as a denominator.
+
+---
+
+Step 3 — Compute Final Result
+
+* Input: `N_final` and each `D_nested`
+* Output: Check if final expression equals 24
+* Execution:
+For every valid `D_nested`:
+
+```
+result = N_final / D_nested
+```
+
+If `result = 24` (with a small numerical tolerance), the expression is valid.

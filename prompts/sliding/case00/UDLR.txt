@@ -1,0 +1,21 @@
+**Step 1**
+
+* **Input:** Board, target number 1, target position `(0,0)`, empty space at `(1,1)`, and number 1 at `(2,2)`.
+* **Output:** Current board state after one arbitrary move and the move direction.
+* **Execution:**
+
+  1. **Apply a free displacement move:**
+
+     * Move the empty space **one step in any valid direction**:
+
+       * `"U"`, `"D"`, `"L"`, or `"R"`.
+     * This move is only used to **break the dead center configuration** and prepare for normal rectangle rotation in the next step.
+
+  2. **Output:**
+
+     ```json
+     {
+       "moves": ["U"] or ["D"] or ["L"] or ["R"],
+       "new_board": updated_board
+     }
+     ```

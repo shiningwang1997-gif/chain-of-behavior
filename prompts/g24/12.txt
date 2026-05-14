@@ -1,0 +1,23 @@
+Step 1
+
+* Input: Four numbers `[a, b, c, d]`
+* Output: A sum of two numbers that will serve as a multiplier base
+* Execution: Choose two numbers and compute their sum: `sum = a + b` or `sum = b + a`.
+
+Step 2
+
+* Input: Sum from Step 1 and a third number
+* Output: Multiply sum by the third number
+* Execution: `product = sum * c`.
+
+Step 3
+
+* Input: Product from Step 2 and the remaining number
+* Output: Add or subtract the remaining number to reach 24
+* Execution: Check if `product + d == 24` or `product - d == 24`.
+
+Step 4
+
+* Input: Result from Step 3
+* Output: Final verification
+* Execution: If result equals 24 → success. If not, try different pairings or operation orders in Step 1 and Step 2.

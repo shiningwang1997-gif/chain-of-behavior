@@ -1,0 +1,17 @@
+## **Step 1**
+
+* **Input:** Current board `Board` and the position of the empty space `0`.
+* **Output:** Updated board `Board_updated` after moving the empty space **up** by one cell, and recorded action `action = "U"`.
+* **Execution:**
+
+  1. Identify the current row and column of the empty space `(r0, c0)`.
+  2. Compute the new row after moving up:
+
+     ```
+     r1 = r0 - 1
+     ```
+
+     * Ensure `r1` is not less than `0` (upper boundary).
+  3. Swap the empty space `0` with the element at `(r1, c0)` in the board.
+  4. Record the action `"U"` in the moves list.
+  5. Return the updated board `Board_updated` and the action `"U"`.

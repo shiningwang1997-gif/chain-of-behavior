@@ -1,0 +1,28 @@
+Step 1
+
+* Input: Four numbers `[a, b, c, d]`
+* Output: Identify candidates for a “base” number to multiply by a fraction
+* Execution: Choose a number `x` as the multiplier. Among the remaining numbers `[y, z, w]`, check if one can form a fraction `(y ± z / w)` or `(y ± w / z)` such that `fraction * x = 24`.
+
+Step 2
+
+* Input: Chosen multiplier `x` and fraction candidate `(y ± z / w)`
+* Output: Construct the expression `x * (y ± z / w)` or `(y ± z / w) * x`
+* Execution: Compute `x * (y ± z / w)` for all permutations of `[y, z, w]` and both `+`/`-`.
+
+Step 3
+
+* Input: Result of Step 2
+* Output: Check if equals 24
+* Execution:
+
+  * If result = 24 → success
+  * Else → try different permutation of `[y, z, w]` or switch `+`/`-` in fraction
+  * Repeat until all permutations exhausted
+
+Step 4 (optional small adjustments)
+
+* Input: Expression that is close to 24 but not exact
+* Output: Minor corrections using leftover numbers
+* Execution: Incorporate remaining numbers as small additive/subtractive adjustments, e.g., `(x * (y ± z / w)) ± leftover`
+

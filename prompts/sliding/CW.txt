@@ -1,0 +1,20 @@
+* **Input:**
+  Current board `board`, rectangle `[r0, r1, c0, c1]`.
+
+* **Output:**
+  Move direction of `0` as `"U" | "D" | "L" | "R"` and the updated board after one clockwise rotation.
+
+* **Execution:**
+
+  1. Extract the outer-layer coordinates of the rectangle `[r0, r1, c0, c1]` in clockwise order.
+  2. Collect the values of these coordinates into a list `V`.
+  3. Perform one clockwise cyclic shift:
+     `V' = [V[-1]] + V[:-1]`.
+  4. Write back `V'` to the same outer-layer coordinates in order.
+  5. Locate the position of `0` before and after rotation.
+  6. Convert the coordinate change of `0` to move direction:
+     `(x, y) → (x-1, y) = "U"`,
+     `(x, y) → (x+1, y) = "D"`,
+     `(x, y) → (x, y-1) = "L"`,
+     `(x, y) → (x, y+1) = "R"`.
+  7. Output the move and the updated board.

@@ -1,0 +1,17 @@
+Step 1
+
+* Input: Split numbers into sum group and ratio group
+* Output: Compute initial sum and ratio
+* Execution: `(sum(group1) / num_from_group2)`
+
+Step 2
+
+* Input: Step 1 result + remaining numbers
+* Output: Adjust combination
+* Execution: Add, subtract, or multiply to approach 24
+
+Step 3
+
+* Input: Result
+* Output: Check if equals 24
+* Execution: If not, try other groupings or operation orders

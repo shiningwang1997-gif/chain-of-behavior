@@ -1,0 +1,120 @@
+## **Step 1**
+
+* **Input:** Current board `Board`, target numbers `5`, `8`, target positions `(1,1)`, `(2,1)`, empty space position.
+* **Output:** The minimal rectangle used for rotation computation.
+* **Execution:**
+
+  1. **Determine the rectangle:**
+
+     * Construct the **smallest rectangle** that **must include all three elements**:
+
+       * Current positions of target numbers `5`, `8`
+       * Current position of the empty space
+
+     * The rectangle must also include the **target edge positions `(1,1)` and `(2,1)`**.
+
+     * Record the rectangle boundaries as `(r0, r1, c0, c1)`.
+
+     * The rectangle must satisfy:
+
+       ```
+       r1 - r0 ≥ 1 and c1 - c0 ≥ 1
+       ```
+
+       (rectangle must be at least 2×2)
+
+---
+
+## **Step 2**
+
+* **Input:** Rectangle coordinates `(r0, r1, c0, c1)` and the current board `grid`.
+* **Output:** Ordered outer-layer coordinate list `P`.
+* **Execution:**
+
+  * Use the top-left of the board as the `(0,0)` coordinate system.
+
+  * Enumerate the rectangle **outer layer in clockwise order**, starting from the top-left corner `(r0, c0)`:
+
+    1. From `(r0, c0)` move right to `(r0, c1)`
+    2. From `(r0, c1)` move down to `(r1, c1)`
+    3. From `(r1, c1)` move left to `(r1, c0)`
+    4. From `(r1, c0)` move up back toward `(r0, c0)` (excluding the starting corner)
+
+  * Store the coordinates in order as `P`.
+
+---
+
+## **Step 3**
+
+* **Input:** Outer-layer index list `P`, current indices of `5`, `8`, target indices of `(1,1)`, `(2,1)`.
+* **Output:** Clockwise steps `cw_steps` and counter-clockwise steps `ccw_steps`.
+* **Execution:**
+
+  * Locate:
+
+    * `idx_5`: the index of target number `5` in `P`
+    * `idx_8`: the index of target number `8` in `P`
+    * `idx_t5`: the index of target position `(1,1)` in `P`
+    * `idx_t8`: the index of target position `(2,1)` in `P`
+
+  * Simulate rotation:
+
+    * Rotate **clockwise step by step** until:
+
+      ```
+      position(5) == (1,1) AND position(8) == (2,1)
+      ```
+
+      Record steps as `cw_steps`.
+
+    * Rotate **counter-clockwise step by step** under the same condition.
+      Record steps as `ccw_steps`.
+
+---
+
+## **Step 4**
+
+* **Input:** `cw_steps`, `ccw_steps`, and the empty space position.
+* **Output:** Locked rotation direction `direction_locked` and locked rotation steps `steps_locked`.
+* **Execution:**
+
+  * If `cw_steps < ccw_steps`:
+
+    * `direction_locked = "CW"`
+    * `steps_locked = cw_steps`
+
+  * If `ccw_steps < cw_steps`:
+
+    * `direction_locked = "CCW"`
+    * `steps_locked = ccw_steps`
+
+  * If `cw_steps == ccw_steps`:
+
+    * Choose the direction that **minimizes the Manhattan distance between the empty space and `(1,1)`** after rotation.
+
+    * Set:
+
+      ```
+      steps_locked = cw_steps
+      ```
+
+---
+
+## **Step 5 — Final Output**
+
+* **Input:** `direction_locked`, `steps_locked`, rectangle `(r0, r1, c0, c1)`
+* **Output:** A JSON object containing **rotation direction, step count, and rectangle boundaries**.
+* **Execution:**
+
+> After completing all reasoning and step-by-step calculations above, **always output exactly one JSON object** with the final rotation direction, step count, and rectangle boundaries.
+> You may include reasoning steps, explanations, and intermediate calculations above, but the **last output must be the JSON object**.
+
+**Format:**
+
+```json
+{
+  "direction": "CW",   // or "CCW"
+  "steps": steps_locked,
+  "rectangle": [1, 2, 1, 2]
+}
+```

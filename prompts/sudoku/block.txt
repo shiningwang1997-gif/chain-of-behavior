@@ -1,0 +1,83 @@
+### **Step 1 — Scan Blocks**
+
+* Input: Current board
+* Output: The first 2×3 block (from top-left to bottom-right) that can be updated
+* Execution:
+
+  * Scan blocks in reading order: top-left → top-right → bottom-left → bottom-right.
+
+  * For each block:
+
+    1. Count empty cells. Skip blocks that are fully filled.
+    2. Update candidate lists for empty cells (based on row, column, block constraints; see Step 2).
+    3. Attempt single-candidate or unique-position placements (Steps 3–4).
+    4. If at least one digit is successfully placed → **select this block as the target block and stop scanning further blocks**.
+    5. If no digits can be placed → continue to the next block.
+
+  * Return the target block (if any), or indicate none can be updated.
+
+---
+
+### **Step 2 — Update Candidates**
+
+* Input: Target block + candidate lists
+* Output: Updated candidates for the target block
+* Execution:
+
+  * For each empty cell in the target block, remove digits already present in its row, column, and block.
+  * **Do not place any digits yet; only update candidate sets.**
+
+---
+
+### **Step 3 — Single-Candidate Placement**
+
+* Input: Candidate lists in the target block
+* Output: Deterministic single-candidate fillings
+* Execution:
+
+  * For each cell:
+
+    * If its candidate set has **exactly one** digit and placing it causes no conflict → fill it.
+    * Otherwise → keep it empty.
+  * **Never guess or select from multiple candidates.**
+
+---
+
+### **Step 4 — Unique-Position Placement**
+
+* Input: Remaining empty cells in the block + digits 1–6
+* Output: Unique-position deterministic placements
+* Execution:
+
+  * For each digit 1–6:
+
+    * Determine all cells in the block that can legally take this digit (based on candidates).
+    * If the digit can appear in **exactly one** remaining cell → fill it.
+    * Otherwise → skip the digit.
+  * **Only deterministic unique-position fills are allowed.**
+
+---
+
+### **Step 5 — Validate Placements**
+
+* Input: Newly placed digits in the target block
+* Output: Legality-checked block
+* Execution:
+
+  * For each placed digit:
+
+    * Validate row, column, and block legality.
+    * If any conflict is found → revert (clear) the placement.
+  * Only conflict-free placements remain.
+
+---
+
+### **Step 6 — Merge to Board**
+
+* Input: Results from Steps 2–5 for the selected target block
+* Output: Updated board
+* Execution:
+
+  * Create a copy of the current board.
+  * Apply only **deterministic and conflict-free placements** from the target block.
+  * **Do not scan or update other blocks in this pass** — next iteration will continue from the top-left again.

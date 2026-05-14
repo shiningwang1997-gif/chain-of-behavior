@@ -1,0 +1,18 @@
+Step 1
+
+* Input: Choose a base number
+* Output: Scale it using multiplication or division
+* Execution: `(base * num)` or `(base / num)`
+
+Step 2
+
+* Input: Step 1 result + remaining numbers
+* Output: Further scaling
+* Execution: Multiply or divide to approach 24
+
+Step 3
+
+* Input: Result
+* Output: Check if equals 24
+* Execution: If not, try different base or sequence
+

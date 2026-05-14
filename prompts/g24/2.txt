@@ -1,0 +1,17 @@
+Step 1
+
+* Input: Select two numbers to compute a difference
+* Output: Calculate difference
+* Execution: `(num1 - num2)`
+
+Step 2
+
+* Input: Difference + remaining numbers
+* Output: Combine to approach 24
+* Execution: Use multiplication or addition: `(difference * num3)` or `(difference + num3)`
+
+Step 3
+
+* Input: Result
+* Output: Check if equals 24
+* Execution: If not, try other pairs or operation orders

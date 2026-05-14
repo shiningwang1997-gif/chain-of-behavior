@@ -1,0 +1,139 @@
+## **Step 1**
+
+* **Input:** Current board `Board`, target numbers `2` and `3`, target positions `(0,1)` and `(0,2)`, empty space position.
+* **Output:** The minimal rectangle used for rotation computation.
+* **Execution:**
+
+  1. **Determine the rectangle:**
+
+     * Construct the **smallest rectangle** that **must include all three elements**:
+
+       * Current position of target number `2`
+       * Current position of target number `3`
+       * Current position of the empty space
+
+     * The rectangle must also include the **target edge positions `(0,1)` and `(0,2)`**.
+
+     * Record the initial rectangle boundaries as `(r0, r1, c0, c1)`.
+
+  2. **Enforce minimum size:**
+
+     ```
+     r1 - r0 ≥ 1 and c1 - c0 ≥ 1
+     ```
+
+     (rectangle must be at least 2×2)
+
+  3. **Column expansion rule (strict left-only):**
+
+     * If **all elements and targets are in column 2**, and `c0 == c1 == 2`:
+
+       * Expand **only to column 1**:
+
+         ```
+         c0 = 1
+         ```
+
+       * **Do not** expand to column 0.
+
+       * Do **not** expand to the right.
+
+       * Ensure the rectangle does not include any column containing already restored numbers (e.g., column 0 with `1`).
+
+  4. **Finalize** the rectangle as `(r0, r1, c0, c1)` for rotation computation.
+
+---
+
+## **Step 2**
+
+* **Input:** Rectangle coordinates `(r0, r1, c0, c1)` and the current board `grid`.
+* **Output:** Ordered outer-layer coordinate list `P`.
+* **Execution:**
+
+  * Use the top-left of the board as the `(0,0)` coordinate system.
+
+  * Enumerate the rectangle **outer layer in clockwise order**, starting from the top-left corner `(r0, c0)`:
+
+    1. From `(r0, c0)` move right to `(r0, c1)`
+    2. From `(r0, c1)` move down to `(r1, c1)`
+    3. From `(r1, c1)` move left to `(r1, c0)`
+    4. From `(r1, c0)` move up back toward `(r0, c0)` (excluding the starting corner)
+
+  * Store the coordinates in order as `P`.
+
+---
+
+## **Step 3**
+
+* **Input:** Outer-layer index list `P`, current indices of `2` and `3`, target indices of `(0,1)` and `(0,2)`.
+* **Output:** Clockwise steps `cw_steps` and counter-clockwise steps `ccw_steps`.
+* **Execution:**
+
+  * Locate:
+
+    * `idx_2`: the index of target number `2` in `P`
+    * `idx_3`: the index of target number `3` in `P`
+    * `idx_t2`: the index of target position `(0,1)` in `P`
+    * `idx_t3`: the index of target position `(0,2)` in `P`
+
+  * Simulate rotation:
+
+    * Rotate **clockwise step by step** until:
+
+      ```
+      position(2) == (0,1) AND position(3) == (0,2)
+      ```
+
+      Record steps as `cw_steps`.
+
+    * Rotate **counter-clockwise step by step** under the same condition.
+      Record steps as `ccw_steps`.
+
+---
+
+## **Step 4**
+
+* **Input:** `cw_steps`, `ccw_steps`, and the empty space position.
+* **Output:** Locked rotation direction `direction_locked` and locked rotation steps `steps_locked`.
+* **Execution:**
+
+  * If `cw_steps < ccw_steps`:
+
+    * `direction_locked = "CW"`
+    * `steps_locked = cw_steps`
+
+  * If `ccw_steps < cw_steps`:
+
+    * `direction_locked = "CCW"`
+    * `steps_locked = ccw_steps`
+
+  * If `cw_steps == ccw_steps`:
+
+    * Choose the direction that **minimizes the Manhattan distance between the empty space and `(0,1)`** after rotation.
+
+    * Set:
+
+      ```
+      steps_locked = cw_steps
+      ```
+
+---
+
+## **Step 5 — Final Output**
+
+* **Input:** `direction_locked`, `steps_locked`, rectangle `(r0, r1, c0, c1)`
+* **Output:** A JSON object containing **rotation direction, step count, and rectangle boundaries**.
+* **Execution:**
+
+> After completing all reasoning and step-by-step calculations above, **always output exactly one JSON object** with the final rotation direction, step count, and rectangle boundaries.
+> You may include reasoning steps, explanations, and intermediate calculations above, but the **last output must be the JSON object**.
+
+**Format:**
+
+```json
+{
+  "direction": "CW",   // or "CCW"
+  "steps": steps_locked,
+  "rectangle": [r0, r1, c0, c1]
+}
+```

@@ -1,0 +1,18 @@
+Step 1
+
+* Input: Identify symmetrical or repeated pairs
+* Output: Construct symmetric calculation
+* Execution: `(num1 * num2) - (num3 * num4)`
+
+Step 2
+
+* Input: Step 1 result
+* Output: Adjust using addition or subtraction
+* Execution: `(step1_result + num)` or `(step1_result - num)`
+
+Step 3
+
+* Input: Result
+* Output: Check if equals 24
+* Execution: If not, try other symmetric combinations
+

@@ -1,0 +1,27 @@
+Step 1 — Assign Roles
+*Input: Four numbers `[a, b, c, d]`
+*Output: Construct an intermediate product from two numbers
+*Execution:
+1. Enumerate all possible pairs of two numbers `(x, y)` from `[a, b, c, d]`.
+2. For each pair, compute `x * y`. This is your intermediate product. **Do not skip any pair**.
+
+Step 2 — First Adjustment*
+*Input:Intermediate product and one remaining number `z`
+*Output:Adjust the product toward 24 using addition or subtraction
+*Execution:
+1. For the remaining numbers, try **both addition and subtraction** with the intermediate product: `(x*y) + z`, `(x*y) - z`, `z + (x*y)`, `z - (x*y)`.
+2. **Do not skip any order** — every permutation must be considered.
+
+Step 3 — Final Operation*
+*Input: Result from Step 2 and the last remaining number `w`
+*Output: Reach 24 using final operation
+*Execution:
+1. Try all four operations: `(Step2_result + w)`, `(Step2_result - w)`, `(Step2_result * w)`, `(Step2_result / w)`.
+2. If any of these equals 24, output the solution.
+
+Step 4 — Validation and Backtracking**
+*Input: All combinations tried
+*Output: Final validation
+*Execution:
+1. If 24 is not reached, **backtrack**: try a different pair in Step 1, or a different operation/order in Step 2.
+2. Repeat until all combinations are exhausted or a solution is found.

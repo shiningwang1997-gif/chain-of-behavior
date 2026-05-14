@@ -1,0 +1,19 @@
+Step 1
+
+* Input: Identify candidate numbers that can form a large numerator via multiplication or multiplication plus/minus a small adjustment.
+* Output: A constructed numerator close to `24 × d` where `d` is a candidate denominator.
+* Execution: Try forms like `(a * b)`, `(a * b) ± c`, `(a * b) ± a`, `(a * b) ± b`, or `(a * b) ± (some small expression)` to produce a numerator divisible by a remaining number.
+
+  * Example patterns to try: `numerator = a*b`, `numerator = a*b - c`, `numerator = a*b + c`, `numerator = a*b - a`, etc.
+
+Step 2
+
+* Input: The constructed numerator and the chosen denominator `d` (one of the remaining numbers).
+* Output: The quotient `numerator / d`.
+* Execution: Compute `(numerator) / d`. If the quotient equals 24, you are done; if it is not an integer or not 24, go back to Step 1 and try a different numerator form or a different denominator.
+
+Step 3
+
+* Input: Quotient (from Step 2) and any leftover numbers or adjustments.
+* Output: Final validation and small corrections if needed.
+* Execution: If quotient is exactly 24 — success. If quotient is close (e.g., needs `±` a small integer), try to incorporate remaining numbers as small adjustments in Step 1 (e.g., use `a*b ± c` instead of `a*b`). If still not 24, try other pairings/permutations.

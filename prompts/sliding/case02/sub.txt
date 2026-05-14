@@ -1,0 +1,128 @@
+## **Step 1**
+
+* **Input:** Current board `Board`, current positions of `3`, the empty space `0`, and the target zone `{(1,1), (1,2)}` for the empty space.
+* **Output:** The minimal rectangle used for rotation computation.
+* **Execution:**
+
+  1. **Determine the rectangle:**
+
+     Construct the **smallest rectangle** that must contain：
+
+     * Current position of number `3`
+     * Current position of empty space `0`
+     * At least one of the target positions for empty space: `(1,1)` or `(1,2)`
+     * Any cell in **row 2** (i.e., `r = 2`), since number `3` must be rotated into that row
+
+     Record rectangle boundaries `(r0, r1, c0, c1)`.
+
+     Rectangle must satisfy：
+
+     ```
+     r1 - r0 ≥ 1  and  c1 - c0 ≥ 1
+     ```
+
+     (Rectangle must be at least 2×2)
+
+---
+
+## **Step 2**
+
+* **Input:** Rectangle coordinates `(r0, r1, c0, c1)` and the current board `grid`.
+* **Output:** Ordered outer-layer coordinate list `P`.
+* **Execution:**
+
+  * Use top-left of the board as `(0,0)`.
+
+  * Enumerate the rectangle **outer layer clockwise** starting from `(r0, c0)`:
+
+    1. From `(r0, c0)` → `(r0, c1)`
+    2. From `(r0, c1)` → `(r1, c1)`
+    3. From `(r1, c1)` → `(r1, c0)`
+    4. From `(r1, c0)` → `(r0, c0)` (excluding start point)
+
+  * Store ordered coordinates as list `P`.
+
+---
+
+## **Step 3**
+
+* **Input:** Outer-layer index list `P`, current indices of:
+
+  * empty space `0`
+  * number `3`
+  * target region `{(1,1), (1,2)}` for empty space
+  * row-2 target zone for number `3`
+* **Output:** Clockwise steps `cw_steps` and counter-clockwise steps `ccw_steps`.
+* **Execution:**
+
+  1. Find:
+
+     * `idx_0`: index of empty space in `P`
+     * `idx_3`: index of number `3` in `P`
+     * `idx_t0`: index of whichever target `(1,1)` or `(1,2)` lies in the rectangle and exists in `P`
+     * `idx_row2_*`: valid indices in `P` whose row = 2
+
+  2. **Simulate clockwise rotation step by step** until both conditions hold：
+
+     ```
+     empty space reaches (1,1) or (1,2)
+     AND
+     number 3 reaches any cell in row 2
+     ```
+
+     Record number of steps as `cw_steps`.
+
+  3. **Simulate counter-clockwise rotation** with the same stopping conditions.
+
+     Record as `ccw_steps`.
+
+---
+
+## **Step 4**
+
+* **Input:** `cw_steps`, `ccw_steps`, relative geometry of 0 and 3.
+* **Output:** Locked rotation direction `direction_locked` and locked rotation steps `steps_locked`.
+* **Execution:**
+
+  * If `cw_steps < ccw_steps`:
+
+    * `direction_locked = "CW"`
+    * `steps_locked = cw_steps`
+
+  * If `ccw_steps < cw_steps`:
+
+    * `direction_locked = "CCW"`
+    * `steps_locked = ccw_steps`
+
+  * If `cw_steps == ccw_steps`, apply tie-breaking:
+
+    * Compare Manhattan distance after 1 CW vs 1 CCW rotation and choose the direction that places:
+
+      * empty space closer to `(1,1)`
+      * or empty space closer to `(1,2)` if `(1,1)` unreachable
+
+    Use that direction and set：
+
+    ```
+    steps_locked = cw_steps
+    ```
+
+---
+
+## **Step 5 — Final Output**
+
+* **Input:** `direction_locked`, `steps_locked`, rectangle `(r0, r1, c0, c1)`
+* **Output:** A final JSON object with direction, step count, rectangle boundaries.
+* **Execution:**
+
+> After all calculations, output **only one JSON object** as the final response.
+
+**Format:**
+
+```json
+{
+  "direction": "CW",   // or "CCW"
+  "steps": steps_locked,
+  "rectangle": [r0, r1, c0, c1]
+}
+```

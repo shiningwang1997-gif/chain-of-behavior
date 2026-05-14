@@ -1,0 +1,33 @@
+Step 1
+
+* **Input:** Identify identical or near-square numbers
+* **Output:** Construct an intermediate value by multiplication that approximates a square
+* **Execution:**
+
+  * If two numbers are identical → compute `num1 * num2` such as `13 * 13 = 169`
+  * If no identical pair → choose two numbers whose product or ratio is close to a perfect square such as `3 * 8 = 24`, close to 25
+  * Only **one multiplication** is allowed here; do **not** square a computed result `(expr)*(expr)`
+
+---
+
+Step 2
+
+* **Input:** Step 1 result + remaining numbers
+* **Output:** Combine results to approach 24
+* **Execution:**
+
+  * Use remaining two numbers with `+`, `-`, `*`, or `/`
+  * Try simple forms like `(step1_result - num3) / num4`, `(step1_result + num3) / num4`, `(step1_result / num3) + num4`, or `(step1_result / num3) - num4`
+  * Use parentheses as needed to control order; each original number must appear **exactly once**
+
+---
+
+Step 3
+
+* **Input:** Final result
+* **Output:** Check if equals 24
+* **Execution:**
+
+  * If result == 24 → success
+  * Else → retry Step 1 with a different pair or operator combination
+  

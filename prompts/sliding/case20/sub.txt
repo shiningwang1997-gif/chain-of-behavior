@@ -1,0 +1,117 @@
+## **Step 1**
+
+* **Input:** Current board `Board`, current positions of `0` (empty) and `7`.
+* **Output:** The fixed rectangle `[1,2,1,2]` used for rotation computation.
+* **Execution:**
+
+  1. **Set the rectangle:**
+
+     * Use the predefined rectangle:
+
+       ```
+       r0 = 1, r1 = 2, c0 = 1, c1 = 2
+       ```
+
+       (rows 1–2, columns 1–2, a 2×2 rectangle)
+
+     * Ensure that **both the empty space `0` and the tile `7` are inside this rectangle**.
+
+     * The rectangle must satisfy:
+
+       ```
+       r1 - r0 ≥ 1 and c1 - c0 ≥ 1
+       ```
+
+       (rectangle is at least 2×2)
+
+---
+
+## **Step 2**
+
+* **Input:** Rectangle coordinates `(r0, r1, c0, c1)` and the current board `grid`.
+* **Output:** Ordered outer-layer coordinate list `P`.
+* **Execution:**
+
+  * Use the top-left of the board as the `(0,0)` coordinate system.
+
+  * Enumerate the rectangle **outer layer in clockwise order**, starting from the top-left corner `(r0, c0)`:
+
+    1. From `(r0, c0)` move right to `(r0, c1)`
+    2. From `(r0, c1)` move down to `(r1, c1)`
+    3. From `(r1, c1)` move left to `(r1, c0)`
+    4. From `(r1, c0)` move up back toward `(r0, c0)` (excluding the starting corner)
+
+  * Store the coordinates in order as `P`.
+
+---
+
+## **Step 3**
+
+* **Input:** Outer-layer index list `P`, current indices of `0` and `7`, target index sets for empty and 7.
+* **Output:** Clockwise steps `cw_steps` and counter-clockwise steps `ccw_steps`.
+* **Execution:**
+
+  * Locate:
+
+    * `idx_0`: the index of the empty space `0` in `P`
+    * `idx_7`: the index of tile `7` in `P`
+    * `idx_t0_set`: the index(es) in `P` corresponding to target positions for `0`: `(1,1)` and `(2,1)` (whichever lie inside `P`)
+    * `idx_t7_set`: the index(es) in `P` corresponding to target positions for `7`: `(1,2)` and `(2,2)` (whichever lie inside `P`)
+
+  * Simulate rotation step by step:
+
+    * For **clockwise (CW)**: rotate the outer layer one step at a time and after each step check whether both conditions are met:
+
+      ```
+      position(0) ∈ {(1,1), (2,1)}  AND  position(7) ∈ {(1,2), (2,2)}
+      ```
+
+      Stop when both are true and record the number of CW steps as `cw_steps`.
+
+    * For **counter-clockwise (CCW)**: repeat the simulation in CCW direction and record the number of steps as `ccw_steps`.
+
+  * If neither direction reaches the condition within `len(P)` steps (i.e. impossible), set the corresponding step count to `∞` (or a sentinel) to indicate infeasible.
+
+---
+
+## **Step 4**
+
+* **Input:** `cw_steps`, `ccw_steps`, and the empty space / tile geometry.
+* **Output:** Locked rotation direction `direction_locked` and locked rotation steps `steps_locked`.
+* **Execution:**
+
+  * If `cw_steps < ccw_steps`:
+
+    * `direction_locked = "CW"`
+    * `steps_locked = cw_steps`
+
+  * Else if `ccw_steps < cw_steps`:
+
+    * `direction_locked = "CCW"`
+    * `steps_locked = ccw_steps`
+
+  * Else (tie or both equal):
+
+    * For tie-breaking, compute the Manhattan distance for the empty space to the nearest target `(1,1)` or `(2,1)` after one CW vs one CCW step; choose the direction that places the empty space closer to its target set. If still tied, prefer `"CW"`.
+
+    * Set `steps_locked = cw_steps`.
+
+---
+
+## **Step 5 — Final Output**
+
+* **Input:** `direction_locked`, `steps_locked`, rectangle `(r0, r1, c0, c1)`
+* **Output:** A JSON object containing **rotation direction, step count, and rectangle boundaries**.
+* **Execution:**
+
+> After completing all reasoning and step-by-step calculations above, include your reasoning and simulations, but **ensure the final line of the response is exactly one JSON object** with the fields below.
+
+**Format:**
+
+```json
+{
+  "direction": "CW",   // or "CCW"
+  "steps": steps_locked,
+  "rectangle": [1, 2, 1, 2]
+}
+```

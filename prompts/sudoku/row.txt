@@ -1,0 +1,83 @@
+### **Step 1 — Scan Rows**
+
+* Input: Current board
+* Output: The first row (from top to bottom) that can be updated
+* Execution:
+
+  * Scan rows from top (row 0) to bottom (row 5).
+
+  * For each row:
+
+    1. Count empty cells. Skip rows that are fully filled.
+    2. Update candidate lists for empty cells (based on row, column, block constraints; see Step 2).
+    3. Attempt single-candidate or unique-position placements (Steps 3–4).
+    4. If at least one digit is successfully placed → **select this row as the target row and stop scanning further rows**.
+    5. If no digits can be placed → continue to the next row.
+
+  * Return the target row (if any), or indicate none can be updated.
+
+---
+
+### **Step 2 — Update Candidates**
+
+* Input: Target row + current candidate lists
+* Output: Updated candidates for the target row
+* Execution:
+
+  * For each empty cell in the target row, remove digits already present in its row, column, and block.
+  * **Do not choose any value yet; only update candidate sets.**
+
+---
+
+### **Step 3 — Single-Candidate Placement**
+
+* Input: Candidate lists in the target row
+* Output: Row state after single-candidate placements
+* Execution:
+
+  * For each cell:
+
+    * If its candidate set has **exactly one** digit and placing it causes no conflict → fill it.
+    * Otherwise → keep it empty.
+  * **Never guess or select from multiple candidates.**
+
+---
+
+### **Step 4 — Unique-Position Placement**
+
+* Input: Remaining empty cells in the target row + digits 1–6
+* Output: Row state after “unique position” placements
+* Execution:
+
+  * For each digit 1–6:
+
+    * Determine all cells in the row that can legally take this digit (based on candidates).
+    * If the digit can appear in **exactly one** remaining cell → fill it.
+    * Otherwise → do not place it.
+  * **Only deterministic unique-position fills are allowed.**
+
+---
+
+### **Step 5 — Validate Placements**
+
+* Input: Newly filled cells in the target row
+* Output: Legality-checked row state
+* Execution:
+
+  * For each placed digit:
+
+    * Validate row, column, and block legality.
+    * If any conflict is found → revert (clear) the placement.
+  * Only conflict-free placements remain.
+
+---
+
+### **Step 6 — Merge to Board**
+
+* Input: Results from Steps 2–5 for the selected target row
+* Output: Updated board
+* Execution:
+
+  * Create a copy of the current board.
+  * Apply only **deterministic and conflict-free placements** from the target row.
+  * **Do not scan or update other rows in this pass** — next iteration will continue from the top again.

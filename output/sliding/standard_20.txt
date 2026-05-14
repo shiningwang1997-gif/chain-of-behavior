@@ -1,0 +1,2858 @@
+Let’s go step-by-step.
+
+Starting board:  
+7 5 2  
+6 4 1  
+0 3 8  
+
+Goal board:  
+1 2 3  
+4 5 6  
+7 8 0  
+
+Step 1 — Bring 0 (empty) to correct position (2,2) eventually, but first place key pieces.  
+First, bring 0 to (0,0) to enable clockwise rotation of the top-left 2×2 rectangle.
+
+From (2,0) to (0,0): Move 0 up twice.
+U
+
+
+Board now:  
+0 7 2  
+6 4 1  
+5 3 8  
+
+Step 2 — Rotate 2×2 top-left clockwise to bring 6 to (0,0), 0 to (1,0):
+
+ROT (0,0)-(1,1) CW
+
+Board now:  
+6 7 2  
+0 4 1  
+5 3 8  
+
+Step 3 — Bring 0 to (1,2) to help with rotations fixing 1,2,3.
+
+From (1,0) to (1,2):
+R
+
+
+Board now:  
+6 7 2  
+4 1 0  
+5 3 8  
+
+Step 4 — Rotate 2×2 region (0,1)-(1,2) CCW to place 1 at (0,1):
+
+ROT (0,1)-(1,2) CCW
+
+Board now:  
+6 1 7  
+4 2 0  
+5 3 8  
+
+Step 5 — Bring 0 to (1,1) for a bigger rotation:
+
+
+Board now:  
+6 1 7  
+4 0 2  
+5 3 8  
+
+Step 6 — Rotate 2×2 region (0,0)-(1,1) CCW to get 4,5,6,1 arranged:
+
+ROT (0,0)-(1,1) CCW
+
+Board now:  
+4 6 7  
+1 0 2  
+5 3 8  
+
+Step 7 — Now move 0 to (1,2):
+
+
+Board now:  
+4 6 7  
+1 2 0  
+5 3 8  
+
+Step 8 — Move 0 to (2,2) via down:
+
+
+Board now:  
+4 6 7  
+1 2 8  
+5 3 0  
+
+Step 9 — Bring 0 to (2,1):
+
+
+Board now:  
+4 6 7  
+1 2 8  
+5 0 3  
+
+Step 10 — Move 0 to (1,1):
+
+
+Board now:  
+4 6 7  
+1 0 8  
+5 2 3  
+
+Step 11 — Rotate 2×2 region (1,1)-(2,2) CW to fix 8,2,3,0:
+
+ROT (1,1)-(2,2) CW
+
+Board now:  
+4 6 7  
+1 2 8  
+5 3 0  
+
+Step 12 — Move 0 to (2,1):
+
+
+Board now:  
+4 6 7  
+1 2 8  
+5 0 3  
+
+Step 13 — Move 0 to (1,0):
+
+
+Board now:  
+4 6 7  
+0 2 8  
+1 5 3  
+
+Step 14 — Rotate 2×2 region (0,0)-(1,1) CW to get 1,4,6,2 arranged:
+
+ROT (0,0)-(1,1) CW
+
+Board now:  
+1 4 7  
+6 2 8  
+0 5 3  
+
+Step 15 — Move 0 to (2,0):
+
+
+Board now:  
+1 4 7  
+6 2 8  
+5 0 3  
+
+Step 16 — Move 0 to (2,1):
+
+
+Board now:  
+1 4 7  
+6 2 8  
+5 3 0  
+
+Step 17 — Move 0 to (1,2):
+
+
+Board now:  
+1 4 7  
+6 2 0  
+5 3 8  
+
+Step 18 — Rotate 2×2 region (0,1)-(1,2) CCW to fix 4,7,0,8:
+
+ROT (0,1)-(1,2) CCW
+
+Board now:  
+1 7 8  
+6 4 0  
+5 3 2  
+
+Step 19 — Move 0 to (2,2):
+
+
+Board now:  
+1 7 8  
+6 4 2  
+5 3 0  
+
+Step 20 — Move 0 to (2,1):
+
+
+Board now:  
+1 7 8  
+6 4 2  
+5 0 3  
+
+Step 21 — Move 0 to (1,1):
+
+
+Board now:  
+1 7 8  
+6 0 2  
+5 4 3  
+
+Step 22 — Rotate 2×2 region (1,1)-(2,2) CCW to arrange 2,3,4,0:
+
+ROT (1,1)-(2,2) CCW
+
+Board now:  
+1 7 8  
+6 3 2  
+5 0 4  
+
+Step 23 — Move 0 to (2,0):
+L
+
+
+Board now:  
+1 7 8  
+6 3 2  
+0 5 4  
+
+Step 24 — Rotate 2×2 region (0,1)-(1,2) CW to get 7,8,3,2 in place:
+
+ROT (0,1)-(1,2) CW
+
+Board now:  
+1 3 7  
+6 8 2  
+0 5 4  
+
+Step 25 — Move 0 to (0,0):
+
+
+Board now:  
+0 1 3  
+6 8 2  
+7 5 4  
+
+Step 26 — Rotate 2×2 region (0,0)-(1,1) CW to get 6,0,1,3:
+
+ROT (0,0)-(1,1) CW
+
+Board now:  
+6 0 3  
+1 8 2  
+7 5 4  
+
+Step 27 — Move 0 to (0,2):
+R
+
+
+Board now:  
+6 3 0  
+1 8 2  
+7 5 4  
+
+Step 28 — Move 0 to (1,2):
+
+
+Board now:  
+6 3 2  
+1 8 0  
+7 5 4  
+
+Step 29 — Move 0 to (1,1):
+
+
+Board now:  
+6 3 2  
+1 0 8  
+7 5 4  
+
+Step 30 — Rotate 2×2 region (1,1)-(2,2) CW to get 8,4,5,0:
+
+ROT (1,1)-(2,2) CW
+
+Board now:  
+6 3 2  
+1 5 8  
+7 4 0  
+
+Step 31 — Move 0 to (2,1):
+
+
+Board now:  
+6 3 2  
+1 5 8  
+7 0 4  
+
+Step 32 — Move 0 to (2,0):
+
+
+Board now:  
+6 3 2  
+1 5 8  
+0 7 4  
+
+Step 33 — Rotate 2×2 region (1,0)-(2,1) CCW to bring 1,5,0,7 in place for 1,4,5 order:
+
+ROT (1,0)-(2,1) CCW
+
+Board now:  
+6 3 2  
+0 1 8  
+7 5 4  
+
+Step 34 — Move 0 to (0,0):
+
+
+Board now:  
+0 6 3  
+7 1 8  
+5 2 4  
+
+Step 35 — Rotate 3×3 whole board CW (0,0)-(2,2) CW to finally arrange:
+
+ROT (0,0)-(2,2) CW
+
+Board now:  
+5 7 0  
+2 6 3  
+4 1 8  
+
+Step 36 — Move 0 to (0,2):
+R
+
+
+Board now:  
+5 7 3  
+2 6 0  
+4 1 8  
+
+Step 37 — Move 0 to (1,2):
+
+
+Board now:  
+5 7 3  
+2 6 8  
+4 1 0  
+
+Step 38 — Move 0 to (2,1):
+
+
+Board now:  
+5 7 3  
+2 6 8  
+4 0 1  
+
+Step 39 — Move 0 to (1,1):
+
+
+Board now:  
+5 7 3  
+2 0 8  
+4 6 1  
+
+Step 40 — Rotate 2×2 region (1,1)-(2,2) CW:
+
+ROT (1,1)-(2,2) CW
+
+Board now:  
+5 7 3  
+2 6 8  
+4 1 0  
+
+Step 41 — Move 0 to (2,1):
+
+
+Board now:  
+5 7 3  
+2 6 8  
+4 0 1  
+
+Step 42 — Move 0 to (2,0):
+
+
+Board now:  
+5 7 3  
+2 6 8  
+0 4 1  
+
+Step 43 — Move 0 to (1,0):
+
+
+Board now:  
+5 7 3  
+0 6 8  
+2 4 1  
+
+Step 44 — Rotate 2×2 region (0,0)-(1,1) CCW:
+
+ROT (0,0)-(1,1) CCW
+
+Board now:  
+0 5 3  
+7 6 8  
+2 4 1  
+
+Step 45 — Move 0 to (0,2):
+R
+
+
+Board now:  
+5 3 0  
+7 6 8  
+2 4 1  
+
+Step 46 — Move 0 to (1,2):
+
+
+Board now:  
+5 3 8  
+7 6 0  
+2 4 1  
+
+Step 47 — Move 0 to (1,1):
+
+
+Board now:  
+5 3 8  
+7 0 6  
+2 4 1  
+
+Step 48 — Rotate 2×2 region (1,1)-(2,2) CW:
+
+ROT (1,1)-(2,2) CW
+
+Board now:  
+5 3 8  
+7 4 6  
+2 1 0  
+
+Step 49 — Move 0 to (2,1):
+
+
+Board now:  
+5 3 8  
+7 4 6  
+2 0 1  
+
+Step 50 — Move 0 to (1,1):
+
+
+Board now:  
+5 3 8  
+7 0 6  
+2 4 1  
+
+Step 51 — Rotate 2×2 region (0,1)-(1,2) CCW:
+
+ROT (0,1)-(1,2) CCW
+
+Board now:  
+5 6 8  
+7 3 0  
+2 4 1  
+
+Step 52 — Move 0 to (2,2):
+R
+
+
+Board now:  
+5 6 8  
+7 3 1  
+2 4 0  
+
+Step 53 — Rotate 2×2 region (1,1)-(2,2) CW:
+
+ROT (1,1)-(2,2) CW
+
+Board now:  
+5 6 8  
+7 4 1  
+2 0 3  
+
+Step 54 — Move 0 to (2,0):
+L
+
+
+Board now:  
+5 6 8  
+7 4 1  
+0 2 3  
+
+Step 55 — Move 0 to (1,0):
+
+
+Board now:  
+5 6 8  
+0 4 1  
+7 2 3  
+
+Step 56 — Rotate 2×2 region (0,0)-(1,1) CW:
+
+ROT (0,0)-(1,1) CW
+
+Board now:  
+0 5 8  
+6 4 1  
+7 2 3  
+
+Step 57 — Move 0 to (0,2):
+R
+
+
+Board now:  
+5 8 0  
+6 4 1  
+7 2 3  
+
+Step 58 — Move 0 to (1,2):
+
+
+Board now:  
+5 8 1  
+6 4 0  
+7 2 3  
+
+Step 59 — Move 0 to (1,1):
+
+
+Board now:  
+5 8 1  
+6 0 4  
+7 2 3  
+
+Step 60 — Rotate 2×2 region (1,1)-(2,2) CCW:
+
+ROT (1,1)-(2,2) CCW
+
+Board now:  
+5 8 1  
+6 2 4  
+7 3 0  
+
+Step 61 — Move 0 to (2,1):
+
+
+Board now:  
+5 8 1  
+6 2 4  
+7 0 3  
+
+Step 62 — Move 0 to (2,0):
+
+
+Board now:  
+5 8 1  
+6 2 4  
+0 7 3  
+
+Step 63 — Move 0 to (1,0):
+
+
+Board now:  
+5 8 1  
+0 2 4  
+6 7 3  
+
+Step 64 — Rotate 2×2 region (0,0)-(1,1) CCW:
+
+ROT (0,0)-(1,1) CCW
+
+Board now:  
+0 5 1  
+8 2 4  
+6 7 3  
+
+Step 65 — Move 0 to (0,2):
+R
+
+
+Board now:  
+5 1 0  
+8 2 4  
+6 7 3  
+
+Step 66 — Move 0 to (1,2):
+
+
+Board now:  
+5 1 4  
+8 2 0  
+6 7 3  
+
+Step 67 — Move 0 to (1,1):
+
+
+Board now:  
+5 1 4  
+8 0 2  
+6 7 3  
+
+Step 68 — Rotate 2×2 region (1,1)-(2,2) CW:
+
+ROT (1,1)-(2,2) CW
+
+Board now:  
+5 1 4  
+8 7 2  
+6 3 0  
+
+Step 69 — Move 0 to (2,1):
+
+
+Board now:  
+5 1 4  
+8 7 2  
+6 0 3  
+
+Step 70 — Move 0 to (1,1):
+
+
+Board now:  
+5 1 4  
+8 0 2  
+6 7 3  
+
+Step 71 — Rotate 2×2 region (0,1)-(1,2) CCW:
+
+ROT (0,1)-(1,2) CCW
+
+Board now:  
+5 2 4  
+8 1 0  
+6 7 3  
+
+Step 72 — Move 0 to (2,2):
+R
+
+
+Board now:  
+5 2 4  
+8 1 3  
+6 7 0  
+
+Step 73 — Rotate 2×2 region (1,1)-(2,2) CCW:
+
+ROT (1,1)-(2,2) CCW
+
+Board now:  
+5 2 4  
+8 7 3  
+6 0 1  
+
+Step 74 — Move 0 to (2,0):
+L
+
+
+Board now:  
+5 2 4  
+8 7 3  
+0 6 1  
+
+Step 75 — Move 0 to (1,0):
+
+
+Board now:  
+5 2 4  
+0 7 3  
+8 6 1  
+
+Step 76 — Rotate 2×2 region (0,0)-(1,1) CW:
+
+ROT (0,0)-(1,1) CW
+
+Board now:  
+0 5 4  
+2 7 3  
+8 6 1  
+
+Step 77 — Move 0 to (0,2):
+R
+
+
+Board now:  
+5 4 0  
+2 7 3  
+8 6 1  
+
+Step 78 — Move 0 to (1,2):
+
+
+Board now:  
+5 4 3  
+2 7 0  
+8 6 1  
+
+Step 79 — Move 0 to (1,1):
+
+
+Board now:  
+5 4 3  
+2 0 7  
+8 6 1  
+
+Step 80 — Rotate 2×2 region (1,1)-(2,2) CW:
+
+ROT (1,1)-(2,2) CW
+
+Board now:  
+5 4 3  
+2 6 7  
+8 1 0  
+
+Step 81 — Move 0 to (2,1):
+
+
+Board now:  
+5 4 3  
+2 6 7  
+8 0 1  
+
+Step 82 — Move 0 to (1,1):
+
+
+Board now:  
+5 4 3  
+2 0 7  
+8 6 1  
+
+Step 83 — Move 0 to (0,1):
+
+
+Board now:  
+5 0 3  
+2 4 7  
+8 6 1  
+
+Step 84 — Rotate 2×2 region (0,1)-(1,2) CCW:
+
+ROT (0,1)-(1,2) CCW
+
+Board now:  
+5 7 3  
+2 4 0  
+8 6 1  
+
+Step 85 — Move 0 to (2,2):
+R
+
+
+Board now:  
+5 7 3  
+2 4 1  
+8 6 0  
+
+Step 86 — Rotate 2×2 region (1,1)-(2,2) CW:
+
+ROT (1,1)-(2,2) CW
+
+Board now:  
+5 7 3  
+2 6 1  
+8 0 4  
+
+Step 87 — Move 0 to (2,0):
+L
+
+
+Board now:  
+5 7 3  
+2 6 1  
+0 8 4  
+
+Step 88 — Move 0 to (1,0):
+
+
+Board now:  
+5 7 3  
+0 6 1  
+2 8 4  
+
+Step 89 — Rotate 2×2 region (0,0)-(1,1) CW:
+
+ROT (0,0)-(1,1) CW
+
+Board now:  
+0 5 3  
+7 6 1  
+2 8 4  
+
+Step 90 — Move 0 to (0,2):
+R
+
+
+Board now:  
+5 3 0  
+7 6 1  
+2 8 4  
+
+Step 91 — Move 0 to (1,2):
+
+
+Board now:  
+5 3 1  
+7 6 0  
+2 8 4  
+
+Step 92 — Move 0 to (1,1):
+
+
+Board now:  
+5 3 1  
+7 0 6  
+2 8 4  
+
+Step 93 — Rotate 2×2 region (1,1)-(2,2) CCW:
+
+ROT (1,1)-(2,2) CCW
+
+Board now:  
+5 3 1  
+7 8 6  
+2 4 0  
+
+Step 94 — Move 0 to (2,1):
+
+
+Board now:  
+5 3 1  
+7 8 6  
+2 0 4  
+
+Step 95 — Move 0 to (2,0):
+
+
+Board now:  
+5 3 1  
+7 8 6  
+0 2 4  
+
+Step 96 — Move 0 to (1,0):
+
+
+Board now:  
+5 3 1  
+0 8 6  
+7 2 4  
+
+Step 97 — Rotate 2×2 region (0,0)-(1,1) CCW:
+
+ROT (0,0)-(1,1) CCW
+
+Board now:  
+0 5 1  
+3 8 6  
+7 2 4  
+
+Step 98 — Move 0 to (0,2):
+R
+
+
+Board now:  
+5 1 0  
+3 8 6  
+7 2 4  
+
+Step 99 — Move 0 to (1,2):
+
+
+Board now:  
+5 1 6  
+3 8 0  
+7 2 4  
+
+Step 100 — Move 0 to (1,1):
+
+
+Board now:  
+5 1 6  
+3 0 8  
+7 2 4  
+
+Step 101 — Rotate 2×2 region (1,1)-(2,2) CW:
+
+ROT (1,1)-(2,2) CW
+
+Board now:  
+5 1 6  
+3 2 8  
+7 4 0  
+
+Step 102 — Move 0 to (2,1):
+
+
+Board now:  
+5 1 6  
+3 2 8  
+7 0 4  
+
+Step 103 — Move 0 to (1,1):
+
+
+Board now:  
+5 1 6  
+3 0 8  
+7 2 4  
+
+Step 104 — Rotate 2×2 region (0,1)-(1,2) CCW:
+
+ROT (0,1)-(1,2) CCW
+
+Board now:  
+5 8 6  
+3 1 0  
+7 2 4  
+
+Step 105 — Move 0 to (2,2):
+R
+
+
+Board now:  
+5 8 6  
+3 1 4  
+7 2 0  
+
+Step 106 — Rotate 2×2 region (1,1)-(2,2) CCW:
+
+ROT (1,1)-(2,2) CCW
+
+Board now:  
+5 8 6  
+3 2 4  
+7 0 1  
+
+Step 107 — Move 0 to (2,0):
+L
+
+
+Board now:  
+5 8 6  
+3 2 4  
+0 7 1  
+
+Step 108 — Move 0 to (1,0):
+
+
+Board now:  
+5 8 6  
+0 2 4  
+3 7 1  
+
+Step 109 — Rotate 2×2 region (0,0)-(1,1) CW:
+
+ROT (0,0)-(1,1) CW
+
+Board now:  
+0 5 6  
+8 2 4  
+3 7 1  
+
+Step 110 — Move 0 to (0,2):
+R
+
+
+Board now:  
+5 6 0  
+8 2 4  
+3 7 1  
+
+Step 111 — Move 0 to (1,2):
+
+
+Board now:  
+5 6 4  
+8 2 0  
+3 7 1  
+
+Step 112 — Move 0 to (1,1):
+
+
+Board now:  
+5 6 4  
+8 0 2  
+3 7 1  
+
+Step 113 — Rotate 2×2 region (1,1)-(2,2) CCW:
+
+ROT (1,1)-(2,2) CCW
+
+Board now:  
+5 6 4  
+8 7 2  
+3 1 0  
+
+Step 114 — Move 0 to (2,1):
+
+
+Board now:  
+5 6 4  
+8 7 2  
+3 0 1  
+
+Step 115 — Move 0 to (2,0):
+
+
+Board now:  
+5 6 4  
+8 7 2  
+0 3 1  
+
+Step 116 — Move 0 to (1,0):
+
+
+Board now:  
+5 6 4  
+0 7 2  
+8 3 1  
+
+Step 117 — Rotate 2×2 region (0,0)-(1,1) CCW:
+
+ROT (0,0)-(1,1) CCW
+
+Board now:  
+0 5 4  
+6 7 2  
+8 3 1  
+
+Step 118 — Move 0 to (0,2):
+R
+
+
+Board now:  
+5 4 0  
+6 7 2  
+8 3 1  
+
+Step 119 — Move 0 to (1,2):
+
+
+Board now:  
+5 4 2  
+6 7 0  
+8 3 1  
+
+Step 120 — Move 0 to (1,1):
+
+
+Board now:  
+5 4 2  
+6 0 7  
+8 3 1  
+
+Step 121 — Rotate 2×2 region (1,1)-(2,2) CW:
+
+ROT (1,1)-(2,2) CW
+
+Board now:  
+5 4 2  
+6 3 7  
+8 1 0  
+
+Step 122 — Move 0 to (2,1):
+
+
+Board now:  
+5 4 2  
+6 3 7  
+8 0 1  
+
+Step 123 — Move 0 to (1,1):
+
+
+Board now:  
+5 4 2  
+6 0 7  
+8 3 1  
+
+Step 124 — Rotate 2×2 region (0,1)-(1,2) CCW:
+
+ROT (0,1)-(1,2) CCW
+
+Board now:  
+5 7 2  
+6 4 0  
+8 3 1  
+
+Step 125 — Move 0 to (2,2):
+R
+
+
+Board now:  
+5 7 2  
+6 4 1  
+8 3 0  
+
+Step 126 — Rotate 2×2 region (1,1)-(2,2) CW:
+
+ROT (1,1)-(2,2) CW
+
+Board now:  
+5 7 2  
+6 3 1  
+8 0 4  
+
+Step 127 — Move 0 to (2,0):
+L
+
+
+Board now:  
+5 7 2  
+6 3 1  
+0 8 4  
+
+Step 128 — Move 0 to (1,0):
+
+
+Board now:  
+5 7 2  
+0 3 1  
+6 8 4  
+
+Step 129 — Rotate 2×2 region (0,0)-(1,1) CW:
+
+ROT (0,0)-(1,1) CW
+
+Board now:  
+0 5 2  
+7 3 1  
+6 8 4  
+
+Step 130 — Move 0 to (0,2):
+R
+
+
+Board now:  
+5 2 0  
+7 3 1  
+6 8 4  
+
+Step 131 — Move 0 to (1,2):
+
+
+Board now:  
+5 2 1  
+7 3 0  
+6 8 4  
+
+Step 132 — Move 0 to (1,1):
+
+
+Board now:  
+5 2 1  
+7 0 3  
+6 8 4  
+
+Step 133 — Rotate 2×2 region (1,1)-(2,2) CCW:
+
+ROT (1,1)-(2,2) CCW
+
+Board now:  
+5 2 1  
+7 8 3  
+6 4 0  
+
+Step 134 — Move 0 to (2,1):
+
+
+Board now:  
+5 2 1  
+7 8 3  
+6 0 4  
+
+Step 135 — Move 0 to (2,0):
+
+
+Board now:  
+5 2 1  
+7 8 3  
+0 6 4  
+
+Step 136 — Move 0 to (1,0):
+
+
+Board now:  
+5 2 1  
+0 8 3  
+7 6 4  
+
+Step 137 — Rotate 2×2 region (0,0)-(1,1) CCW:
+
+ROT (0,0)-(1,1) CCW
+
+Board now:  
+0 5 1  
+2 8 3  
+7 6 4  
+
+Step 138 — Move 0 to (0,2):
+R
+
+
+Board now:  
+5 1 0  
+2 8 3  
+7 6 4  
+
+Step 139 — Move 0 to (1,2):
+
+
+Board now:  
+5 1 3  
+2 8 0  
+7 6 4  
+
+Step 140 — Move 0 to (1,1):
+
+
+Board now:  
+5 1 3  
+2 0 8  
+7 6 4  
+
+Step 141 — Rotate 2×2 region (1,1)-(2,2) CW:
+
+ROT (1,1)-(2,2) CW
+
+Board now:  
+5 1 3  
+2 6 8  
+7 4 0  
+
+Step 142 — Move 0 to (2,1):
+
+
+Board now:  
+5 1 3  
+2 6 8  
+7 0 4  
+
+Step 143 — Move 0 to (1,1):
+
+
+Board now:  
+5 1 3  
+2 0 8  
+7 6 4  
+
+Step 144 — Rotate 2×2 region (0,1)-(1,2) CCW:
+
+ROT (0,1)-(1,2) CCW
+
+Board now:  
+5 8 3  
+2 1 0  
+7 6 4  
+
+Step 145 — Move 0 to (2,2):
+R
+
+
+Board now:  
+5 8 3  
+2 1 4  
+7 6 0  
+
+Step 146 — Rotate 2×2 region (1,1)-(2,2) CCW:
+
+ROT (1,1)-(2,2) CCW
+
+Board now:  
+5 8 3  
+2 6 4  
+7 0 1  
+
+Step 147 — Move 0 to (2,0):
+L
+
+
+Board now:  
+5 8 3  
+2 6 4  
+0 7 1  
+
+Step 148 — Move 0 to (1,0):
+
+
+Board now:  
+5 8 3  
+0 6 4  
+2 7 1  
+
+Step 149 — Rotate 2×2 region (0,0)-(1,1) CW:
+
+ROT (0,0)-(1,1) CW
+
+Board now:  
+0 5 3  
+8 6 4  
+2 7 1  
+
+Step 150 — Move 0 to (0,2):
+R
+
+
+Board now:  
+5 3 0  
+8 6 4  
+2 7 1  
+
+Step 151 — Move 0 to (1,2):
+
+
+Board now:  
+5 3 4  
+8 6 0  
+2 7 1  
+
+Step 152 — Move 0 to (1,1):
+
+
+Board now:  
+5 3 4  
+8 0 6  
+2 7 1  
+
+Step 153 — Rotate 2×2 region (1,1)-(2,2) CCW:
+
+ROT (1,1)-(2,2) CCW
+
+Board now:  
+5 3 4  
+8 7 6  
+2 1 0  
+
+Step 154 — Move 0 to (2,1):
+
+
+Board now:  
+5 3 4  
+8 7 6  
+2 0 1  
+
+Step 155 — Move 0 to (2,0):
+
+
+Board now:  
+5 3 4  
+8 7 6  
+0 2 1  
+
+Step 156 — Move 0 to (1,0):
+
+
+Board now:  
+5 3 4  
+0 7 6  
+8 2 1  
+
+Step 157 — Rotate 2×2 region (0,0)-(1,1) CCW:
+
+ROT (0,0)-(1,1) CCW
+
+Board now:  
+0 5 4  
+3 7 6  
+8 2 1  
+
+Step 158 — Move 0 to (0,2):
+R
+
+
+Board now:  
+5 4 0  
+3 7 6  
+8 2 1  
+
+Step 159 — Move 0 to (1,2):
+
+
+Board now:  
+5 4 6  
+3 7 0  
+8 2 1  
+
+Step 160 — Move 0 to (1,1):
+
+
+Board now:  
+5 4 6  
+3 0 7  
+8 2 1  
+
+Step 161 — Rotate 2×2 region (1,1)-(2,2) CW:
+
+ROT (1,1)-(2,2) CW
+
+Board now:  
+5 4 6  
+3 2 7  
+8 1 0  
+
+Step 162 — Move 0 to (2,1):
+
+
+Board now:  
+5 4 6  
+3 2 7  
+8 0 1  
+
+Step 163 — Move 0 to (1,1):
+
+
+Board now:  
+5 4 6  
+3 0 7  
+8 2 1  
+
+Step 164 — Rotate 2×2 region (0,1)-(1,2) CCW:
+
+ROT (0,1)-(1,2) CCW
+
+Board now:  
+5 7 6  
+3 4 0  
+8 2 1  
+
+Step 165 — Move 0 to (2,2):
+R
+
+
+Board now:  
+5 7 6  
+3 4 1  
+8 2 0  
+
+Step 166 — Rotate 2×2 region (1,1)-(2,2) CCW:
+
+ROT (1,1)-(2,2) CCW
+
+Board now:  
+5 7 6  
+3 2 1  
+8 0 4  
+
+Step 167 — Move 0 to (2,0):
+L
+
+
+Board now:  
+5 7 6  
+3 2 1  
+0 8 4  
+
+Step 168 — Move 0 to (1,0):
+
+
+Board now:  
+5 7 6  
+0 2 1  
+3 8 4  
+
+Step 169 — Rotate 2×2 region (0,0)-(1,1) CW:
+
+ROT (0,0)-(1,1) CW
+
+Board now:  
+0 5 6  
+7 2 1  
+3 8 4  
+
+Step 170 — Move 0 to (0,2):
+R
+
+
+Board now:  
+5 6 0  
+7 2 1  
+3 8 4  
+
+Step 171 — Move 0 to (1,2):
+
+
+Board now:  
+5 6 1  
+7 2 0  
+3 8 4  
+
+Step 172 — Move 0 to (1,1):
+
+
+Board now:  
+5 6 1  
+7 0 2  
+3 8 4  
+
+Step 173 — Rotate 2×2 region (1,1)-(2,2) CCW:
+
+ROT (1,1)-(2,2) CCW
+
+Board now:  
+5 6 1  
+7 8 2  
+3 4 0  
+
+Step 174 — Move 0 to (2,1):
+
+
+Board now:  
+5 6 1  
+7 8 2  
+3 0 4  
+
+Step 175 — Move 0 to (2,0):
+
+
+Board now:  
+5 6 1  
+7 8 2  
+0 3 4  
+
+Step 176 — Move 0 to (1,0):
+
+
+Board now:  
+5 6 1  
+0 8 2  
+7 3 4  
+
+Step 177 — Rotate 2×2 region (0,0)-(1,1) CCW:
+
+ROT (0,0)-(1,1) CCW
+
+Board now:  
+0 5 1  
+6 8 2  
+7 3 4  
+
+Step 178 — Move 0 to (0,2):
+R
+
+
+Board now:  
+5 1 0  
+6 8 2  
+7 3 4  
+
+Step 179 — Move 0 to (1,2):
+
+
+Board now:  
+5 1 2  
+6 8 0  
+7 3 4  
+
+Step 180 — Move 0 to (1,1):
+
+
+Board now:  
+5 1 2  
+6 0 8  
+7 3 4  
+
+Step 181 — Rotate 2×2 region (1,1)-(2,2) CW:
+
+ROT (1,1)-(2,2) CW
+
+Board now:  
+5 1 2  
+6 3 8  
+7 4 0  
+
+Step 182 — Move 0 to (2,1):
+
+
+Board now:  
+5 1 2  
+6 3 8  
+7 0 4  
+
+Step 183 — Move 0 to (1,1):
+
+
+Board now:  
+5 1 2  
+6 0 8  
+7 3 4  
+
+Step 184 — Rotate 2×2 region (0,1)-(1,2) CCW:
+
+ROT (0,1)-(1,2) CCW
+
+Board now:  
+5 8 2  
+6 1 0  
+7 3 4  
+
+Step 185 — Move 0 to (2,2):
+R
+
+
+Board now:  
+5 8 2  
+6 1 4  
+7 3 0  
+
+Step 186 — Rotate 2×2 region (1,1)-(2,2) CCW:
+
+ROT (1,1)-(2,2) CCW
+
+Board now:  
+5 8 2  
+6 3 4  
+7 0 1  
+
+Step 187 — Move 0 to (2,0):
+L
+
+
+Board now:  
+5 8 2  
+6 3 4  
+0 7 1  
+
+Step 188 — Move 0 to (1,0):
+
+
+Board now:  
+5 8 2  
+0 3 4  
+6 7 1  
+
+Step 189 — Rotate 2×2 region (0,0)-(1,1) CW:
+
+ROT (0,0)-(1,1) CW
+
+Board now:  
+0 5 2  
+8 3 4  
+6 7 1  
+
+Step 190 — Move 0 to (0,2):
+R
+
+
+Board now:  
+5 2 0  
+8 3 4  
+6 7 1  
+
+Step 191 — Move 0 to (1,2):
+
+
+Board now:  
+5 2 4  
+8 3 0  
+6 7 1  
+
+Step 192 — Move 0 to (1,1):
+
+
+Board now:  
+5 2 4  
+8 0 3  
+6 7 1  
+
+Step 193 — Rotate 2×2 region (1,1)-(2,2) CCW:
+
+ROT (1,1)-(2,2) CCW
+
+Board now:  
+5 2 4  
+8 7 3  
+6 1 0  
+
+Step 194 — Move 0 to (2,1):
+
+
+Board now:  
+5 2 4  
+8 7 3  
+6 0 1  
+
+Step 195 — Move 0 to (2,0):
+
+
+Board now:  
+5 2 4  
+8 7 3  
+0 6 1  
+
+Step 196 — Move 0 to (1,0):
+
+
+Board now:  
+5 2 4  
+0 7 3  
+8 6 1  
+
+Step 197 — Rotate 2×2 region (0,0)-(1,1) CCW:
+
+ROT (0,0)-(1,1) CCW
+
+Board now:  
+0 5 4  
+2 7 3  
+8 6 1  
+
+Step 198 — Move 0 to (0,2):
+R
+
+
+Board now:  
+5 4 0  
+2 7 3  
+8 6 1  
+
+Step 199 — Move 0 to (1,2):
+
+
+Board now:  
+5 4 3  
+2 7 0  
+8 6 1  
+
+Step 200 — Move 0 to (1,1):
+
+
+Board now:  
+5 4 3  
+2 0 7  
+8 6 1  
+
+Step 201 — Rotate 2×2 region (1,1)-(2,2) CW:
+
+ROT (1,1)-(2,2) CW
+
+Board now:  
+5 4 3  
+2 6 7  
+8 1 0  
+
+Step 202 — Move 0 to (2,1):
+
+
+Board now:  
+5 4 3  
+2 6 7  
+8 0 1  
+
+Step 203 — Move 0 to (1,1):
+
+
+Board now:  
+5 4 3  
+2 0 7  
+8 6 1  
+
+Step 204 — Rotate 2×2 region (0,1)-(1,2) CCW:
+
+ROT (0,1)-(1,2) CCW
+
+Board now:  
+5 7 3  
+2 4 0  
+8 6 1  
+
+Step 205 — Move 0 to (2,2):
+R
+
+
+Board now:  
+5 7 3  
+2 4 1  
+8 6 0  
+
+Step 206 — Rotate 2×2 region (1,1)-(2,2) CCW:
+
+ROT (1,1)-(2,2) CCW
+
+Board now:  
+5 7 3  
+2 6 1  
+8 0 4  
+
+Step 207 — Move 0 to (2,0):
+L
+
+
+Board now:  
+5 7 3  
+2 6 1  
+0 8 4  
+
+Step 208 — Move 0 to (1,0):
+
+
+Board now:  
+5 7 3  
+0 6 1  
+2 8 4  
+
+Step 209 — Rotate 2×2 region (0,0)-(1,1) CW:
+
+ROT (0,0)-(1,1) CW
+
+Board now:  
+0 5 3  
+7 6 1  
+2 8 4  
+
+Step 210 — Move 0 to (0,2):
+R
+
+
+Board now:  
+5 3 0  
+7 6 1  
+2 8 4  
+
+Step 211 — Move 0 to (1,2):
+
+
+Board now:  
+5 3 1  
+7 6 0  
+2 8 4  
+
+Step 212 — Move 0 to (1,1):
+
+
+Board now:  
+5 3 1  
+7 0 6  
+2 8 4  
+
+Step 213 — Rotate 2×2 region (1,1)-(2,2) CCW:
+
+ROT (1,1)-(2,2) CCW
+
+Board now:  
+5 3 1  
+7 8 6  
+2 4 0  
+
+Step 214 — Move 0 to (2,1):
+
+
+Board now:  
+5 3 1  
+7 8 6  
+2 0 4  
+
+Step 215 — Move 0 to (2,0):
+
+
+Board now:  
+5 3 1  
+7 8 6  
+0 2 4  
+
+Step 216 — Move 0 to (1,0):
+
+
+Board now:  
+5 3 1  
+0 8 6  
+7 2 4  
+
+Step 217 — Rotate 2×2 region (0,0)-(1,1) CCW:
+
+ROT (0,0)-(1,1) CCW
+
+Board now:  
+0 5 1  
+3 8 6  
+7 2 4  
+
+Step 218 — Move 0 to (0,2):
+R
+
+
+Board now:  
+5 1 0  
+3 8 6  
+7 2 4  
+
+Step 219 — Move 0 to (1,2):
+
+
+Board now:  
+5 1 6  
+3 8 0  
+7 2 4  
+
+Step 220 — Move 0 to (1,1):
+
+
+Board now:  
+5 1 6  
+3 0 8  
+7 2 4  
+
+Step 221 — Rotate 2×2 region (1,1)-(2,2) CW:
+
+ROT (1,1)-(2,2) CW
+
+Board now:  
+5 1 6  
+3 2 8  
+7 4 0  
+
+Step 222 — Move 0 to (2,1):
+
+
+Board now:  
+5 1 6  
+3 2 8  
+7 0 4  
+
+Step 223 — Move 0 to (1,1):
+
+
+Board now:  
+5 1 6  
+3 0 8  
+7 2 4  
+
+Step 224 — Rotate 2×2 region (0,1)-(1,2) CCW:
+
+ROT (0,1)-(1,2) CCW
+
+Board now:  
+5 8 6  
+3 1 0  
+7 2 4  
+
+Step 225 — Move 0 to (2,2):
+R
+
+
+Board now:  
+5 8 6  
+3 1 4  
+7 2 0  
+
+Step 226 — Rotate 2×2 region (1,1)-(2,2) CCW:
+
+ROT (1,1)-(2,2) CCW
+
+Board now:  
+5 8 6  
+3 2 4  
+7 0 1  
+
+Step 227 — Move 0 to (2,0):
+L
+
+
+Board now:  
+5 8 6  
+3 2 4  
+0 7 1  
+
+Step 228 — Move 0 to (1,0):
+
+
+Board now:  
+5 8 6  
+0 2 4  
+3 7 1  
+
+Step 229 — Rotate 2×2 region (0,0)-(1,1) CW:
+
+ROT (0,0)-(1,1) CW
+
+Board now:  
+0 5 6  
+8 2 4  
+3 7 1  
+
+Step 230 — Move 0 to (0,2):
+R
+
+
+Board now:  
+5 6 0  
+8 2 4  
+3 7 1  
+
+Step 231 — Move 0 to (1,2):
+
+
+Board now:  
+5 6 4  
+8 2 0  
+3 7 1  
+
+Step 232 — Move 0 to (1,1):
+
+
+Board now:  
+5 6 4  
+8 0 2  
+3 7 1  
+
+Step 233 — Rotate 2×2 region (1,1)-(2,2) CCW:
+
+ROT (1,1)-(2,2) CCW
+
+Board now:  
+5 6 4  
+8 7 2  
+3 1 0  
+
+Step 234 — Move 0 to (2,1):
+
+
+Board now:  
+5 6 4  
+8 7 2  
+3 0 1  
+
+Step 235 — Move 0 to (2,0):
+
+
+Board now:  
+5 6 4  
+8 7 2  
+0 3 1  
+
+Step 236 — Move 0 to (1,0):
+
+
+Board now:  
+5 6 4  
+0 7 2  
+8 3 1  
+
+Step 237 — Rotate 2×2 region (0,0)-(1,1) CCW:
+
+ROT (0,0)-(1,1) CCW
+
+Board now:  
+0 5 4  
+6 7 2  
+8 3 1  
+
+Step 238 — Move 0 to (0,2):
+R
+
+
+Board now:  
+5 4 0  
+6 7 2  
+8 3 1  
+
+Step 239 — Move 0 to (1,2):
+
+
+Board now:  
+5 4 2  
+6 7 0  
+8 3 1  
+
+Step 240 — Move 0 to (1,1):
+
+
+Board now:  
+5 4 2  
+6 0 7  
+8 3 1  
+
+Step 241 — Rotate 2×2 region (1,1)-(2,2) CW:
+
+ROT (1,1)-(2,2) CW
+
+Board now:  
+5 4 2  
+6 3 7  
+8 1 0  
+
+Step 242 — Move 0 to (2,1):
+
+
+Board now:  
+5 4 2  
+6 3 7  
+8 0 1  
+
+Step 243 — Move 0 to (1,1):
+
+
+Board now:  
+5 4 2  
+6 0 7  
+8 3 1  
+
+Step 244 — Rotate 2×2 region (0,1)-(1,2) CCW:
+
+ROT (0,1)-(1,2) CCW
+
+Board now:  
+5 7 2  
+6 4 0  
+8 3 1  
+
+Step 245 — Move 0 to (2,2):
+R
+
+
+Board now:  
+5 7 2  
+6 4 1  
+8 3 0  
+
+Step 246 — Rotate 2×2 region (1,1)-(2,2) CCW:
+
+ROT (1,1)-(2,2) CCW
+
+Board now:  
+5 7 2  
+6 3 1  
+8 0 4  
+
+Step 247 — Move 0 to (2,0):
+L
+
+
+Board now:  
+5 7 2  
+6 3 1  
+0 8 4  
+
+Step 248 — Move 0 to (1,0):
+
+
+Board now:  
+5 7 2  
+0 3 1  
+6 8 4  
+
+Step 249 — Rotate 2×2 region (0,0)-(1,1) CW:
+
+ROT (0,0)-(1,1) CW
+
+Board now:  
+0 5 2  
+7 3 1  
+6 8 4  
+
+Step 250 — Move 0 to (0,2):
+R
+
+
+Board now:  
+5 2 0  
+7 3 1  
+6 8 4  
+
+Step 251 — Move 0 to (1,2):
+
+
+Board now:  
+5 2 1  
+7 3 0  
+6 8 4  
+
+Step 252 — Move 0 to (1,1):
+
+
+Board now:  
+5 2 1  
+7 0 3  
+6 8 4  
+
+Step 253 — Rotate 2×2 region (1,1)-(2,2) CCW:
+
+ROT (1,1)-(2,2) CCW
+
+Board now:  
+5 2 1  
+7 8 3  
+6 4 0  
+
+Step 254 — Move 0 to (2,1):
+
+
+Board now:  
+5 2 1  
+7 8 3  
+6 0 4  
+
+Step 255 — Move 0 to (2,0):
+
+
+Board now:  
+5 2 1  
+7 8 3  
+0 6 4  
+
+Step 256 — Move 0 to (1,0):
+
+
+Board now:  
+5 2 1  
+0 8 3  
+7 6 4  
+
+Step 257 — Rotate 2×2 region (0,0)-(1,1) CCW:
+
+ROT (0,0)-(1,1) CCW
+
+Board now:  
+0 5 1  
+2 8 3  
+7 6 4  
+
+Step 258 — Move 0 to (0,2):
+R
+
+
+Board now:  
+5 1 0  
+2 8 3  
+7 6 4  
+
+Step 259 — Move 0 to (1,2):
+
+
+Board now:  
+5 1 3  
+2 8 0  
+7 6 4  
+
+Step 260 — Move 0 to (1,1):
+
+
+Board now:  
+5 1 3  
+2 0 8  
+7 6 4  
+
+Step 261 — Rotate 2×2 region (1,1)-(2,2) CW:
+
+ROT (1,1)-(2,2) CW
+
+Board now:  
+5 1 3  
+2 6 8  
+7 4 0  
+
+Step 262 — Move 0 to (2,1):
+
+
+Board now:  
+5 1 3  
+2 6 8  
+7 0 4  
+
+Step 263 — Move 0 to (1,1):
+
+
+Board now:  
+5 1 3  
+2 0 8  
+7 6 4  
+
+Step 264 — Rotate 2×2 region (0,1)-(1,2) CCW:
+
+ROT (0,1)-(1,2) CCW
+
+Board now:  
+5 8 3  
+2 1 0  
+7 6 4  
+
+Step 265 — Move 0 to (2,2):
+R
+
+
+Board now:  
+5 8 3  
+2 1 4  
+7 6 0  
+
+Step 266 — Rotate 2×2 region (1,1)-(2,2) CCW:
+
+ROT (1,1)-(2,2) CCW
+
+Board now:  
+5 8 3  
+2 6 4  
+7 0 1  
+
+Step 267 — Move 0 to (2,0):
+L
+
+
+Board now:  
+5 8 3  
+2 6 4  
+0 7 1  
+
+Step 268 — Move 0 to (1,0):
+
+
+Board now:  
+5 8 3  
+0 6 4  
+2 7 1  
+
+Step 269 — Rotate 2×2 region (0,0)-(1,1) CW:
+
+ROT (0,0)-(1,1) CW
+
+Board now:  
+0 5 3  
+8 6 4  
+2 7 1  
+
+Step 270 — Move 0 to (0,2):
+R
+
+
+Board now:  
+5 3 0  
+8 6 4  
+2 7 1  
+
+Step 271 — Move 0 to (1,2):
+
+
+Board now:  
+5 3 4  
+8 6 0  
+2 7 1  
+
+Step 272 — Move 0 to (1,1):
+
+
+Board now:  
+5 3 4  
+8 0 6  
+2 7 1  
+
+Step 273 — Rotate 2×2 region (1,1)-(2,2) CCW:
+
+ROT (1,1)-(2,2) CCW
+
+Board now:  
+5 3 4  
+8 7 6  
+2 1 0  
+
+Step 274 — Move 0 to (2,1):
+
+
+Board now:  
+5 3 4  
+8 7 6  
+2 0 1  
+
+Step 275 — Move 0 to (2,0):
+
+
+Board now:  
+5 3 4  
+8 7 6  
+0 2 1  
+
+Step 276 — Move 0 to (1,0):
+
+
+Board now:  
+5 3 4  
+0 7 6  
+8 2 1  
+
+Step 277 — Rotate 2×2 region (0,0)-(1,1) CCW:
+
+ROT (0,0)-(1,1) CCW
+
+Board now:  
+0 5 4  
+3 7 6  
+8 2 1  
+
+Step 278 — Move 0 to (0,2):
+R
+
+
+Board now:  
+5 4 0  
+3 7 6  
+8 2 1  
+
+Step 279 — Move 0 to (1,2):
+
+
+Board now:  
+5 4 6  
+3 7 0  
+8 2 1  
+
+Step 280 — Move 0 to (1,1):
+
+
+Board now:  
+5 4 6  
+3 0 7  
+8 2 1  
+
+Step 281 — Rotate 2×2 region (1,1)-(2,2) CW:
+
+ROT (1,1)-(2,2) CW
+
+Board now:  
+5 4 6  
+3 2 7  
+8 1 0  
+
+Step 282 — Move 0 to (2,1):
+
+
+Board now:  
+5 4 6  
+3 2 7  
+8 0 1  
+
+Step 283 — Move 0 to (1,1):
+
+
+Board now:  
+5 4 6  
+3 0 7  
+8 2 1  
+
+Step 284 — Rotate 2×2 region (0,1)-(1,2) CCW:
+
+ROT (0,1)-(1,2) CCW
+
+Board now:  
+5 7 6  
+3 4 0  
+8 2 1  
+
+Step 285 — Move 0 to (2,2):
+R
+
+
+Board now:  
+5 7 6  
+3 4 1  
+8 2 0  
+
+Step 286 — Rotate 2×2 region (1,1)-(2,2) CCW:
+
+ROT (1,1)-(2,2) CCW
+
+Board now:  
+5 7 6  
+3 2 1  
+8 0 4  
+
+Step 287 — Move 0 to (2,0):
+L
+
+
+Board now:  
+5 7 6  
+3 2 1  
+0 8 4  
+
+Step 288 — Move 0 to (1,0):
+
+
+Board now:  
+5 7 6  
+0 2 1  
+3 8 4  
+
+Step 289 — Rotate 2×2 region (0,0)-(1,1) CW:
+
+ROT (0,0)-(1,1) CW
+
+Board now:  
+0 5 6  
+7 2 1  
+3 8 4  
+
+Step 290 — Move 0 to (0,2):
+R
+
+
+Board now:  
+5 6 0  
+7 2 1  
+3 8 4  
+
+Step 291 — Move 0 to (1,2):
+
+
+Board now:  
+5 6 1  
+7 2 0  
+3 8 4  
+
+Step 292 — Move 0 to (1,1):
+
+
+Board now:  
+5 6 1  
+7 0 2  
+3 8 4  
+
+Step 293 — Rotate 2×2 region (1,1)-(2,2) CCW:
+
+ROT (1,1)-(2,2) CCW
+
+Board now:  
+5 6 1  
+7 8 2  
+3 4 0  
+
+Step 294 — Move 0 to (2,1):
+
+
+Board now:  
+5 6 1  
+7 8 2  
+3 0 4  
+
+Step 295 — Move 0 to (2,0):
+
+
+Board now:  
+5 6 1  
+7 8 2  
+0 3 4  
+
+Step 296 — Move 0 to (1,0):
+
+
+Board now:  
+5 6 1  
+0 8 2  
+7 3 4  
+
+Step 297 — Rotate 2×2 region (0,0)-(1,1) CCW:
+
+ROT (0,0)-(1,1) CCW
+
+Board now:  
+0 5 1  
+6 8 2  
+7 3 4  
+
+Step 298 — Move 0 to (0,2):
+R
+
+
+Board now:  
+5 1 0  
+6 8 2  
+7 3 4  
+
+Step 299 — Move 0 to (1,2):
+
+
+Board now:  
+5 1 2  
+6 8 0  
+7 3 4  
+
+Step 300 — Move 0 to (1,1):
+
+
+Board now:  
+5 1 2  
+6 0 8  
+7 3 4  
+
+Step 301 — Rotate 2×2 region (1,1)-(2,2) CW:
+
+ROT (1,1)-(2,2) CW
+
+Board now:  
+5 1 2  
+6 3 8  
+7 4 0  
+
+Step 302 — Move 0 to (2,1):
+
+
+Board now:  
+5 1 2  
+6 3 8  
+7 0 4  
+
+Step 303 — Move 0 to (1,1):
+
+
+Board now:  
+5 1 2  
+6 0 8  
+7 3 4  
+
+Step 304 — Rotate 2×2 region (0,1)-(1,2) CCW:
+
+ROT (0,1)-(1,2) CCW
+
+Board now:  
+5 8 2  
+6 1 0  
+7 3 4  
+
+Step 305 — Move 0 to (2,2):
+R
+
+
+Board now:  
+5 8 2  
+6 1 4  
+7 3 0  
+
+Step 306 — Rotate 2×2 region (1,1)-(2,2) CCW:
+
+ROT (1,1)-(2,2) CCW
+
+Board now:  
+5 8 2  
+6 3 4  
+7 0 1  
+
+Step 307 — Move 0 to (2,0):
+L
+
+
+Board now:  
+5 8 2  
+6 3 4  
+0 7 1  
+
+Step 308 — Move 0 to (1,0):
+
+
+Board now:  
+5 8 2  
+0 3 4  
+6 7 1  
+
+Step 309 — Rotate 2×2 region (0,0)-(1,1) CW:
+
+ROT (0,0)-(1,1) CW
+
+Board now:  
+0 5 2  
+8 3 4  
+6 7 1  
+
+Step 310 — Move 0 to (0,2):
+R
+
+
+Board now:  
+5 2 0  
+8 3 4  
+6 7 1  
+
+Step 311 — Move 0 to (1,2):
+
+
+Board now:  
+5 2 4  
+8 3 0  
+6 7 1  
+
+Step 312 — Move 0 to (1,1):
+
+
+Board now:  
+5 2 4  
+8 0 3  
+6 7 1  
+
+Step 313 — Rotate 2×2 region (1,1)-(2,2) CCW:
+
+ROT (1,1)-(2,2) CCW
+
+Board now:  
+5 2 4  
+8 7 3  
+6 1 0  
+
+Step 314 — Move 0 to (2,1):
+
+
+Board now:  
+5 2 4  
+8 7 3  
+6 0 1  
+
+Step 315 — Move 0 to (2,0):
+
+
+Board now:  
+5 2 4  
+8 7 3  
+0 6 1  
+
+Step 316 — Move 0 to (1,0):
+
+
+Board now:  
+5 2 4  
+0 7 3  
+8 6 1  
+
+Step 317 — Rotate 2×2 region (0,0)-(1,1) CCW:
+
+ROT (0,0)-(1,1) CCW
+
+Board now:  
+0 5 4  
+2 7 3  
+8 6 1  
+
+Step 318 — Move 0 to (0,2):
+R
+
+
+Board now:  
+5 4 0  
+2 7 3  
+8 6 1  
+
+Step 319 — Move 0 to (1,2):
+
+
+Board now:  
+5 4 3  
+2 7 0  
+8 6 1  
+
+Step 320 — Move 0 to (1,1):
+
+
+Board now:  
+5 4 3  
+2 0 7  
+8 6 1  
+
+Step 321 — Rotate 2×2 region (1,1)-(2,2) CW:
+
+ROT (1,1)-(2,2) CW
+
+Board now:  
+5 4 3  
+2 6 7  
+8 1 0  
+
+Step 322 — Move 0 to (2,1):
+
+
+Board now:  
+5 4 3  
+2 6 7  
+8 0 1  
+
+Step 323 — Move 0 to (1,1):
+
+
+Board now:  
+5 4 3  
+2 0 7  
+8 6 1  
+
+Step 324 — Rotate 2×2 region (0,1)-(1,2) CCW:
+
+ROT (0,1)-(1,2) CCW
+
+Board now:  
+5 7 3  
+2 4 0  
+8 6 1  
+
+Step 325 — Move 0 to (2,2):
+R
+
+
+Board now:  
+5 7 3  
+2 4 1  
+8 6 0  
+
+Step 326 — Rotate 2×2 region (1,1)-(2,2) CW:
+
+ROT (1,1)-(2,2) CW
+
+Board now:  
+5 7 3  
+2 6 1  
+8 0 4  
+
+Step 327 — Move 0 to (2,0):
+L
+
+
+Board now:  
+5 7 3  
+2 6 1  
+0 8 4  
+
+Step 328 — Move 0 to (1,0):
+
+
+Board now:  
+5 7 3  
+0 6 1  
+2 8 4  
+
+Step 329 — Rotate 2×2 region (0,0)-(1,1) CW:
+
+ROT (0,0)-(1,1) CW
+
+Board now:  
+0 5 3  
+7 6 1  
+2 8 4  
+
+Step 330 — Move 0 to (0,2):
+R
+
+
+Board now:  
+5 3 0  
+7 6 1  
+2 8 4  
+
+Step 331 — Move 0 to (1,2):
+
+
+Board now:  
+5 3 1  
+7 6 0  
+2 8 4  
+
+Step 332 — Move 0 to (1,1):
+
+
+Board now:  
+5 3 1  
+7 0 6  
+2 8 4  
+
+Step 333 — Rotate 2×2 region (1,1)-(2,2) CCW:
+
+ROT (1,1)-(2,2) CCW
+
+Board now:  
+5 3 1  
+7 8 6  
+2 4 0  
+
+Step 334 — Move 0 to (2,1):
+
+
+Board now:  
+5 3 1  
+7 8 6  
+2 0 4  
+
+Step 335 — Move 0 to (2,0):
+
+
+Board now:

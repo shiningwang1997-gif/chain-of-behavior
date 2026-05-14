@@ -1,0 +1,19 @@
+Step 1
+
+* Input: Select two numbers for multiplication or addition
+* Output: Compute internal result
+* Execution: `(num1 * num2)` or `(num1 + num2)`
+
+Step 2
+
+* Input: Internal result + remaining number
+* Output: Subtract or add remaining number
+* Execution: `(step1_result - num3)` or `(step1_result + num3)`
+
+Step 3
+
+* Input: Result
+* Output: Check if equals 24
+* Execution: If not, try different order or number selection
+
+
