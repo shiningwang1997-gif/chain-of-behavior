@@ -1,0 +1,52 @@
+Let’s go step by step.
+
+---
+
+**Step 1 – Permutations of numbers**  
+Input: 4, 9, 10, 13  
+All permutations:  
+There are \(4! = 24\) permutations.  
+I’ll list a few for illustration, but we’ll need all for exhaustive search:  
+
+(4, 9, 10, 13), (4, 9, 13, 10), (4, 10, 9, 13), (4, 10, 13, 9), (4, 13, 9, 10), (4, 13, 10, 9),  
+(9, 4, 10, 13), (9, 4, 13, 10), (9, 10, 4, 13), (9, 10, 13, 4), (9, 13, 4, 10), (9, 13, 10, 4),  
+(10, 4, 9, 13), (10, 4, 13, 9), (10, 9, 4, 13), (10, 9, 13, 4), (10, 13, 4, 9), (10, 13, 9, 4),  
+(13, 4, 9, 10), (13, 4, 10, 9), (13, 9, 4, 10), (13, 9, 10, 4), (13, 10, 4, 9), (13, 10, 9, 4).
+
+---
+
+**Step 2 – Expression structures**  
+Common binary tree structures for 4 numbers (5 common forms):  
+
+1. ((a ○ b) ○ c) ○ d  
+2. (a ○ (b ○ c)) ○ d  
+3. (a ○ b) ○ (c ○ d)  
+4. a ○ ((b ○ c) ○ d)  
+5. a ○ (b ○ (c ○ d))  
+
+Where ○ is one of +, -, *, /.
+
+---
+
+**Step 3 – Operator combinations**  
+For each structure and permutation, try \(4^3 = 64\) operator combinations.
+
+---
+
+**Step 4 & 5 – Evaluate**  
+We need to find one that equals 24.
+
+Let’s try a manual search for a solution:
+
+Test: (13 - 9) * (10 - 4)  
+= 4 * 6 = 24 ✅
+
+Check: Uses 13, 9, 10, 4 exactly once.  
+Expression structure: (a - b) * (c - d) with (a,b,c,d) = (13,9,10,4).  
+That’s permutation (13, 9, 10, 4) and structure 3: (a ○ b) ○ (c ○ d).
+
+---
+
+**Step 6 – Final answer**  
+
+Answer: (13 - 9) * (10 - 4) = 24

@@ -1,0 +1,45 @@
+Let’s reason step by step.
+
+**Step 1:**  
+The numbers are 4, 9, 10, 13.  
+24 is larger than all of them except when multiplied or combined.  
+13 is close to 12 (which is half of 24), so 13 might be used as a base from which to subtract a small amount.  
+10 is slightly less than 12, so it could be doubled to get near 24.  
+9 is 3/8 of 24, and 4 is 1/6 of 24 — these are not direct multiples but can serve as scaling factors or adjustments.
+
+**Step 2:**  
+The number 13 is the largest, so it might anchor the expression; 24 − 13 = 11, so we need 11 from the remaining numbers 4, 9, 10.  
+The number 10 is near 11, so 10 + (9 − 4) = 15, not 11.  
+Alternatively, 13 + 11 = 24, and 9 + 4 = 13, not 11.  
+So 13 + (9 + 4) = 26, too large; 13 + 10 = 23, needs 1 more from 9 and 4, but 9 and 4 can make 5 or −5, etc.  
+13 + 10 + (4 − 9) = 18, not 24.  
+So addition/subtraction with 13 doesn’t seem straightforward.
+
+**Step 3:**  
+Consider 10 and 9: their difference is 1, which can be a neutral multiplier.  
+10 + 9 = 19, needs 5 more from 4 and 13, but 13 − 4 = 9, too big; 13 − 8 = 5 but we don’t have 8.  
+Also 10 × 9 = 90, too large; 90 / 4 = 22.5, not integer; 90 / (13 − 4) = 90 / 9 = 10, not 24.
+
+**Step 4:**  
+Try 4 × 9 = 36, which is 12 more than 24.  
+36 − 12 = 24, and 12 is 13 − 1, but 1 is from 10 − 9, but 9 is already used.  
+So that fails.
+
+**Step 5:**  
+Try 13 + 10 = 23, need 1 to reach 24.  
+We have 9 and 4: 9 / 9 = 1, but 9 is already used? No, 9 and 4 remain.  
+9 − 4 = 5, not 1.  
+9 / (13 − 4) = 9 / 9 = 1 — but 13 is used in 13 + 10, so can’t reuse.  
+So reuse not allowed.
+
+**Step 6:**  
+Try 13 − 9 = 4, then we have 4, 4, 10.  
+4 × (10 − 4) = 4 × 6 = 24. Yes, that works:  
+(13 − 9) × (10 − 4) = 4 × 6 = 24.
+
+**Step 7:**  
+Check usage: numbers 4, 9, 10, 13 each used exactly once.
+
+---
+
+**Answer:** (13 − 9) × (10 − 4) = 24

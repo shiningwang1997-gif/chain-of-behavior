@@ -1,0 +1,29 @@
+Step 1  
+- Input: Four numbers  
+- Output: All permutations of the four numbers  
+- Execution: Generate all possible orderings of the four input numbers  
+
+Step 2  
+- Input: Permutations of numbers  
+- Output: All possible expression structures  
+- Execution: Generate all valid binary tree structures representing possible placements of arithmetic operators between numbers  
+
+Step 3  
+- Input: Expression structures and number permutations  
+- Output: All possible operator combinations  
+- Execution: For each expression structure and number permutation, try all combinations of the four basic arithmetic operators (+, -, *, /)  
+
+Step 4  
+- Input: Complete expressions with numbers and operators  
+- Output: Evaluated expressions  
+- Execution: Calculate the result of each expression following arithmetic rules and operator precedence  
+
+Step 5  
+- Input: Evaluated expressions  
+- Output: Valid expressions that equal 24  
+- Execution: Filter expressions where the final result equals 24 (accounting for floating-point precision)  
+
+Step 6  
+- Input: Valid expressions  
+- Output: Final answer  
+- Execution: Select one valid expression that equals 24 and format it as the solution

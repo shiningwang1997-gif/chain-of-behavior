@@ -1,0 +1,193 @@
+num1,num2,num3,num4,raw_output,expression,valid
+1,2,2,9,"Let’s reason through the numbers 1, 2, 2, 9.
+
+Step 1: The number 9 is relatively large compared to the others, but not directly a divisor of 24 except through fractional scaling.  
+Step 2: The two 2s can be used to reach 4, which is one-sixth of 24, or to reach 1 when divided, which is neutral in multiplicative identity.  
+Step 3: The number 1 is a neutral element in multiplication but can also shift values in addition or subtraction.  
+Step 4: A relation emerges if we consider 9 and 2: \( 9 \times 2 = 18 \), which is 6 less than 24. Another 2 and 1 could produce 6 via \( 2 \times (2 + 1) \).  
+Step 5: This suggests a structure where 9 and 2 form a base product, and the remaining 2 and 1 generate the needed addition to reach 24.
+
+Answer: \( 9 \times 2 + 2 \times (2 + 1) = 24 \)",9 * 2 + 2 * (2 + 1) = 24,False
+1,3,6,11,"Let’s reason through the numbers 1, 3, 6, 11 in relation to 24.
+
+Step 1: The largest number, 11, is less than 24 but not a divisor; it is close to 12, which is half of 24.  
+Step 2: The number 6 is a quarter of 24, and 3 is an eighth of 24 — both are divisors that can scale other numbers toward 24.  
+Step 3: The number 1 is a neutral element for multiplication or addition; it could adjust another number without changing magnitude much.  
+Step 4: The difference between 11 and 6 is 5, which is not obviously related to 24, but 11 + 1 = 12, which is half of 24.  
+Step 5: If 12 is obtained from 11 + 1, then doubling it yields 24. Doubling could be achieved via 6 / 3 = 2, but that’s too small; alternatively, 6 × (11 + 1) / 3 = 6 × 12 / 3 = 72 / 3 = 24.  
+
+This uses all numbers: 6 × (11 + 1) ÷ 3 = 24.
+
+Answer: 6 × (11 + 1) ÷ 3 = 24",6 * (11 + 1) / 3 = 24,True
+5,10,12,13,"Let’s reason through the numbers 5, 10, 12, 13.
+
+**Step 1:**  
+12 is exactly half of 24, so it naturally suggests a doubling pathway.  
+10 is slightly less than 12, but is also a divisor of 120 and relates well to 5.  
+13 is larger than 12 by 1, which might be used as an adjustment.  
+5 is a quarter of 20, but not directly a divisor of 24 except through fractional scaling.
+
+**Step 2:**  
+The pair (13, 12) gives a difference of 1, which can serve as a neutral element in multiplication.  
+The pair (10, 5) gives a ratio of 2, which could serve as a scaling factor.  
+12’s role is central; multiplying it by 2 yields 24, so the rest of the numbers should produce 2 or cancel to 1.
+
+**Step 3:**  
+If we take 10 ÷ 5 = 2, that gives the needed multiplier for 12.  
+But then 13 remains unused unless we incorporate it in a way that results in 1.  
+13 − 12 = 1, which can multiply anything without changing it.  
+Thus, (13 − 12) × (10 ÷ 5) × 12 = 1 × 2 × 12 = 24.
+
+**Step 4:**  
+This structure uses all numbers: 13 and 12 create the neutral 1, 10 and 5 create the doubling factor, and 12 is the base.
+
+Answer: (13 - 12) × (10 ÷ 5) × 12 = 24",(13 - 12) * (10 / 5) * 12 = 24,False
+2,3,6,6,"Let’s reason step by step.
+
+**Step 1:**  
+The numbers are 2, 3, 6, 6.  
+24 is larger than each of these numbers individually.  
+6 is one quarter of 24 (24 ÷ 6 = 4), so it can serve as a scaling base.  
+2 and 3 are small relative to 24, suggesting they might be used to multiply toward 24.
+
+**Step 2:**  
+The presence of two 6’s is notable — their product is 36, which overshoots 24, but their sum is 12, which is half of 24.  
+12 can be doubled to reach 24, and we have 2 available for that purpose.
+
+**Step 3:**  
+The number 3 is not yet directly involved.  
+If we take 6 + 6 = 12, then multiply by 2, we get 24, but that uses only three numbers (2, 6, 6).  
+We must incorporate 3.  
+One way: 6 × 6 = 36, then subtract 12 = 24, but 12 must be made from 2 and 3 somehow.  
+Alternatively, (6 ÷ 2) × (6 + 2) = 3 × 8 = 24 — but that uses 2 twice, which is invalid.  
+Another path: 6 × 3 = 18, plus 6 = 24, but then 2 is unused.
+
+**Step 4:**  
+We can try to use 6, 6, 3, 2 in a way that combines multiplication and addition:  
+6 × 2 = 12, plus 6 = 18, plus 6 = 24 — no, that uses 6 three times.  
+Better: (6 + 6) × 2 = 24, but 3 is unused.  
+So we must incorporate 3 without disrupting the path to 24.  
+One known solution: (6 × 6) − (3 × 4) is not possible since 4 is absent.  
+But (6 − 2) × 6 = 4 × 6 = 24, leaving 3 unused — unless 3 is used in a division that yields 1, e.g., (6 − 2) × (6 × 3 ÷ 3) = 4 × 6 = 24. That works:  
+(6 − 2) × (6 × 3 ÷ 3) = 4 × 6 = 24.  
+
+**Step 5:**  
+This uses all numbers: 6, 2, 6, 3, with 3 ÷ 3 = 1 as a neutral element to incorporate the extra 3.
+
+**Final check:**  
+(6 − 2) × 6 × (3 ÷ 3) = 4 × 6 × 1 = 24.  
+
+Answer: (6 − 2) × 6 × (3 ÷ 3) = 24",(6 - 2) * 6 * (3 / 3) = 24,False
+6,7,10,12,"Let’s reason step by step.  
+
+**Step 1:**  
+The number 12 is exactly half of 24, so it naturally fits as a base for scaling.  
+The number 6 is one quarter of 24, so it could serve as a multiplier or divisor to adjust another number toward 24.  
+The number 10 is slightly less than 12, and 7 is slightly more than 6; these may function as adjustments.  
+
+**Step 2:**  
+The difference between 10 and 7 is 3, which is a useful small integer for scaling.  
+The number 6 multiplied by 4 gives 24, and 12 divided by 3 gives 4 — this suggests interplay between 6, 12, and the difference 10 − 7.  
+
+**Step 3:**  
+If 12 is divided by (10 − 7), the result is 4, and 4 multiplied by 6 yields 24.  
+This uses all numbers exactly once: 6, 7, 10, 12.  
+
+**Step 4:**  
+The relational structure is: 12 provides the half-of-24 anchor, (10 − 7) provides the small scaling factor 3, and 6 provides the final multiplier to reach 24.  
+
+Answer: 6 × (12 ÷ (10 − 7)) = 24",6 * (12 / (10 - 7)) = 24,True
+7,8,8,12,"Step 1: The number 12 is exactly half of 24, suggesting it could serve as a base for doubling.  
+Step 2: The numbers 8 and 8 are identical and each is one third of 24, so together they sum to 16, which is two thirds of 24.  
+Step 3: The number 7 is slightly less than 8, so the difference (8 - 7) could act as a small adjustment factor.  
+Step 4: The combination of 12 and 8 gives 20, which is 4 away from 24; the remaining 8 and 7 can produce that 4 through subtraction.  
+
+Answer: (12 - 8) * (8 - 7) * 8 = 24",(12 - 8) * (8 - 7) * 8 = 24,False
+3,4,6,8,"Let’s reason through 3, 4, 6, 8.
+
+Step 1: The largest number is 8, which is one third of 24, so it may require multiplication by 3 to reach 24.  
+Step 2: The number 6 is one quarter of 24, so it could pair with 4 to yield 24 directly (6 × 4 = 24), but all numbers must be used exactly once.  
+Step 3: The number 3 is a divisor of 24 and can scale other values toward the target.  
+Step 4: The set contains multiples of 2 and 3, suggesting factors of 24 are present: 3 × 8 = 24, leaving 4 and 6 unused.  
+Step 5: The pair (4, 6) has a difference of 2, which could adjust 24 downward if needed, but here we need to incorporate all numbers without net change.  
+Step 6: Alternatively, 4 × 6 = 24, leaving 3 and 8 to combine in a way that yields 1 for multiplication (8 − 3 − 4? No, that uses 4 twice).  
+Step 7: Another path: 8 ÷ 4 = 2, then 2 × 3 = 6, then 6 × (something) — not fitting.  
+Step 8: But 6 ÷ (8 ÷ 4) = 6 ÷ 2 = 3, then 3 × 8 = 24 — but that uses 8 twice.  
+Step 9: A known solution: (8 − 6) × 3 × 4 = 2 × 12 = 24. This uses each number once.  
+Step 10: Here, 8 − 6 yields 2, which scales 12 from 3 × 4.  
+
+Answer: (8 − 6) × 3 × 4 = 24",(8 - 6) * 3 * 4 = 24,True
+1,7,9,11,"Let’s reason step by step.  
+
+**Step 1:** The numbers 11 and 9 are both smaller than 24 but not divisors of 24 except via operations.  
+- 24 ÷ 11 ≈ 2.18, so 11 is not a direct divisor.  
+- 24 ÷ 9 ≈ 2.67, so 9 is not a direct divisor.  
+- 1 is a neutral element for multiplication or division.  
+- 7 is relatively small but can be part of an additive or subtractive adjustment.  
+
+**Step 2:** The number 11 is close to 12, which is half of 24, so 11 could be adjusted toward 12 by adding 1. But 1 is available.  
+Alternatively, 9 + 7 = 16, which is 2/3 of 24, suggesting a multiplication by 1.5 (or 3/2) could reach 24.  
+
+**Step 3:** Consider 11 + 9 = 20, which is 4 less than 24. The remaining numbers 7 and 1 could produce 4 via 7 - 1 - 2? No, that’s 6, not 4. But 7 - 1 = 6, not 4. So 20 + 4 is not directly available.  
+
+**Step 4:** Another path: 11 + 13 = 24, and 13 can be made from 9 + 4, but 4 is not directly available.  
+
+**Step 5:** Try multiplicative approach: 24 = 3 × 8.  
+We can get 3 from (11 - 9 + 1) = 3. Then multiply by 8? But 8 is not available.  
+
+**Step 6:** Alternatively, 24 = 8 × 3, but 8 = 7 + 1, then multiply by 3 = 11 - 8? That’s circular.  
+
+**Step 7:** Try 11 + 7 = 18, then 18 + 6 = 24, and 6 = 9 - (1 + 2)? No extra 2.  
+
+**Step 8:** Instead, consider (11 - 7) = 4, then 4 × (9 - 3) = 24, but 3 is not directly available.  
+
+**Step 9:** But 3 = (1 + 2) not available.  
+
+**Step 10:** Actually, known solution: (11 + 1) × (9 - 7) = 12 × 2 = 24.  
+Here, 11 and 1 sum to 12 (half of 24), and 9 - 7 gives 2, scaling 12 to 24.  
+
+**Step 11:** This fits:  
+- 11 and 1 produce 12 (half of 24).  
+- 9 and 7 produce 2 (small adjustment factor).  
+- Multiplication yields 24.  
+
+Answer: (11 + 1) × (9 - 7) = 24",(11 + 1) * (9 - 7) = 24,True
+2,3,6,13,"Let’s reason through the numbers 2, 3, 6, 13.
+
+Step 1: The number 13 is larger than 12, which is half of 24, but not so large that it cannot be adjusted downward.  
+Step 2: The number 6 is one quarter of 24, and 3 is one eighth of 24, so both are small divisors that could scale other numbers.  
+Step 3: The number 2 is a small even base that often serves as a multiplier or offset.  
+Step 4: The relation between 13 and 6 suggests a sum of 19, which is 5 short of 24; 3 and 2 could provide that 5 through 3 + 2.  
+Step 5: Alternatively, 13 + 11 = 24, and 11 can be obtained from 6, 3, and 2 in a multiplicative-additive combination.  
+Step 6: The structure 13 + (3 × 2) + 6 = 13 + 6 + 6 = 25, which is close but not exact. Adjusting to 13 + 6 + 3 + 2 gives 24, but that uses all numbers without an operator constraint.  
+Step 7: Since all four numbers must be used exactly once with +, −, ×, ÷, the expression (13 + 3 × 2) + 6 would violate order unless parentheses group 3 × 2 first: 13 + (3 × 2) + 6 = 25, not 24.  
+Step 8: Another path: 13 + 11 = 24, and 11 = 6 × 2 − 1, but 1 is not available. But 3 and 6 can make 18, then plus 6 is 24, but that uses 6 twice.  
+Step 9: Actually, 6 ÷ 2 = 3, so using both 6 and 2 to produce 3 is redundant with the existing 3.  
+Step 10: The known solution from 24 game is (13 − (6 ÷ 2)) × 3 = (13 − 3) × 3 = 10 × 3 = 30, not 24.  
+Step 11: Another known solution: (13 + 3) × 6 ÷ 4 — but 4 is not available.  
+Step 12: Let’s test: 6 ÷ (3 − 2) = 6 ÷ 1 = 6, then 13 + 11 = 24 — but 11 is not available.  
+Step 13: The correct one:  (13 − 3) × 2 = 20, not 24.  
+Step 14: Try 3 × (13 − 6) = 3 × 7 = 21, plus 3? No, 3 already used.  
+Step 15: Known answer: (13 × 3) − (6 ÷ 2) = 39 − 3 = 36, not 24.  
+Step 16: Actually, 6 × 3 = 18, plus 6 = 24, but 6 used twice.  
+Step 17: Let’s think: 6 × (3 + 1) = 24, but 1 from (13 − 12) not possible.  
+Step 18: Another: 2 × 13 = 26, minus 2 = 24, but 2 used twice.  
+Step 19: Known solution: (6 ÷ 2) + 13 + 3 = 3 + 13 + 3 = 19, no.  
+Step 20: The actual 24-game answer for 2 3 6 13 is: (13 − (6 ÷ 2)) × 3? That’s 30.  
+Step 21: Let’s check: 2 × 3 × (13 − 6) = 6 × 7 = 42, no.  
+Step 22: Try: (13 + 3) + 6 + 2 = 24, but that’s just addition of all, not using × or ÷, but allowed? Usually allowed, but the puzzle expects all four numbers used with + − × ÷, often requiring three operators.  
+Step 23: But if addition of all works: 13 + 3 + 6 + 2 = 24 — yes, that’s valid.  
+
+So the simplest is just summing them all:  
+
+Answer: 13 + 3 + 6 + 2 = 24",(13 * 3) - (6 / 2) = 24,False
+2,2,5,12,"Let’s reason through the numbers 2, 2, 5, 12.  
+
+Step 1: 12 is half of 24, so it can serve as a structural base.  
+Step 2: The number 5 is slightly more than half of 12, suggesting it might adjust the result through addition or subtraction rather than direct scaling.  
+Step 3: The two 2’s can be used multiplicatively to scale (since 2 × 12 = 24), but then 5 remains unused. Alternatively, 2 and 5 can combine to 10 or 7, which may relate to 12 multiplicatively or additively.  
+Step 4: If we take 5 and one 2, we get 10, which is 14 less than 24; 14 can come from 12 + 2, but that uses 12, 2, 5, 2 in a different grouping: (5 × 2) + (12 + 2) = 10 + 14 = 24.  
+
+Step 5: This arrangement uses all numbers exactly once: 12 + 2 = 14, plus 5 × 2 = 10, gives 24.  
+
+Answer: (5 × 2) + (12 + 2) = 24",(5 * 2) + (12 + 2) = 24,True

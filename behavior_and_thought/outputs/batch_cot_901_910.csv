@@ -1,0 +1,545 @@
+num1,num2,num3,num4,raw_output,expression,valid
+4,5,6,10,"Let’s reason through the numbers 4, 5, 6, 10.
+
+Step 1: The number 10 is slightly less than half of 24, so it may need amplification.  
+Step 2: The number 6 is one quarter of 24, and 4 is one sixth of 24 — both can serve as multipliers or divisors.  
+Step 3: The number 5 is close to 6, so their difference is small, which could adjust another result.  
+Step 4: The relation between 10 and 6 gives 60, which is 2.5 times 24, suggesting division by a number near 2.5 could help.  
+Step 5: The number 4 is a divisor of 24 and could adjust 60 into a multiple of 24: 60 ÷ (5 − 4) = 60, too large; but 60 ÷ (5 − (something)) — better: 6 × 10 = 60, and 60 ÷ (5 − 4) = 60, not 24. Instead, 6 ÷ (5 − 4) = 6, then × 4 = 24. That works.
+
+Answer: 6 ÷ (5 − 4) × 4 = 24",6 / (5 - 4) * 4 = 24,False
+1,2,4,7,"Let’s reason step by step.  
+
+**Step 1:**  
+The target is 24. The largest number here is 7, which is less than 24 but not a divisor of 24 directly.  
+4 is a divisor of 24 (24 ÷ 4 = 6), so it could serve as a scaling base.  
+2 is a small integer that can multiply to reach 24 with 12, or be used in additive adjustments.  
+1 is a neutral element for multiplication or addition.  
+
+**Step 2:**  
+The relation between 7 and 4 is notable: 7 − 4 = 3, and 3 × 8 = 24.  
+If we could make 8 from the remaining numbers 2 and 1, that would connect.  
+8 can be made from 2 and 1 via 2³, but we have only four numbers and must use each once.  
+
+**Step 3:**  
+Another path: 7 × 4 = 28, which is 4 more than 24.  
+We have 2 and 1; 2 × 1 = 2, but 28 − 4 = 24, so we need to subtract 4.  
+We can get 4 from 2 and 1? 2 × (1 + 1) would require reusing 1, not allowed.  
+
+But 2 × 2 = 4, and we don’t have two 2’s.  
+
+**Step 4:**  
+Consider 7 + 1 = 8, then 8 × (4 − 1) = 24, but that uses 1 twice.  
+
+Alternatively: (7 − 1) × (4 ÷ 1) = 24? That’s 6 × 4 = 24, but again uses 1 twice.  
+
+We must use 2 somewhere.  
+
+**Step 5:**  
+Try (7 + 1) × (4 − 2)?? That’s 8 × 2 = 16, not 24.  
+
+But (7 × 4) − (2 + 1 + 1) reuses 1, so not allowed.  
+
+Actually, (7 × 4) − (2 + 2) reuses 2, so no.  
+
+But (7 × 4) − (2 × 2) reuses 2, so no.  
+
+**Step 6:**  
+We need to use 1, 2, 4, 7 exactly once.  
+
+What about (7 × 2) = 14, then 14 + 10 = 24, but 10 from 4 and 1? 4 × 2.5 not integer.  
+
+(7 − 1) = 6, then 6 × 4 = 24, but 2 unused.  
+
+So maybe (7 − 1) × 4 × (2/2) = 24, but that uses 2 twice.  
+
+Better: (7 − 1) × (4 × 1) = 24, but 2 unused.  
+
+So maybe 2 is used in division to make 1: (7 − 1) × (4 × (2/2)) — but that uses 2 twice.  
+
+**Step 7:**  
+Another approach: 2 × 12 = 24. How to make 12 from 7, 4, 1?  
+7 + 4 + 1 = 12 exactly.  
+
+So: 2 × (7 + 4 + 1) = 2 × 12 = 24.  
+
+That uses each number exactly once.  
+
+---
+
+**Answer:** 2 × (7 + 4 + 1) = 24",2 * (7 + 4 + 1) = 24,True
+2,5,8,11,"Let’s reason step by step.  
+
+**Step 1:** The numbers are 2, 5, 8, 11.  
+- 24 is larger than all of them individually.  
+- 8 is one third of 24 (24 ÷ 3 = 8), so it could serve as a base for scaling up by 3.  
+- 11 and 5 are relatively distant from 24, but their sum 16 is closer.  
+- 2 is a small number that could act as a multiplier or divisor.  
+
+**Step 2:** 11 + 5 = 16, which is 8 less than 24. This suggests that 16 could be adjusted by 8 to reach 24, but we only have one 8.  
+Alternatively, 8 × 3 = 24, so if we can make 3 from 2, 5, 11, that’s promising.  
+
+**Step 3:** 11 − 8 = 3. That’s interesting: 11 and 8 produce 3 directly. Then 3 × 8 = 24, but we’ve used 8 twice. Not allowed.  
+So maybe: (11 − 8) = 3, then multiply by something to get 24. We have 2 and 5 left. 5 − 2 = 3. Then 3 × 8 = 24, but again 8 is used once.  
+
+**Step 4:** Another approach: 8 ÷ 2 = 4, then 4 × (11 − 5) = 4 × 6 = 24.  
+This uses all numbers exactly once: 8, ÷, 2, ×, (, 11, −, 5, ).  
+
+**Step 5:** Check: 8 ÷ 2 = 4, 11 − 5 = 6, 4 × 6 = 24.  
+
+Answer: (8 / 2) * (11 - 5) = 24",(8 / 2) * (11 - 5) = 24,True
+3,4,4,13,"Let’s reason through the numbers 3, 4, 4, 13.
+
+Step 1: The number 13 is larger than 24/2 and not a divisor of 24, so it may require subtraction from a larger intermediate or multiplication by a fraction to reach 24.  
+Step 2: The number 4 is a divisor of 24 (24 ÷ 4 = 6), and having two 4’s suggests a scaling or summing role.  
+Step 3: The number 3 is also a divisor of 24 (24 ÷ 3 = 8), so it could pair with 4 to make 12 or with 13 to make 16 (sum) or 10 (difference).  
+Step 4: The relation 13 − 3 = 10, which is far from 24, but 13 + 3 = 16, which is closer.  
+Step 5: If we take 13 + 3 = 16, then we need to add 8 to reach 24. The two 4’s can be multiplied to give 16, not 8, but 4 + 4 = 8.  
+Step 6: So 16 + 8 = 24, which is (13 + 3) + (4 + 4).  
+
+Answer: (13 + 3) + (4 + 4) = 24",(13 + 3) + (4 + 4) = 24,True
+6,7,8,9,"Let’s reason step by step.
+
+**Step 1:**  
+The numbers 6, 7, 8, 9 are consecutive integers from 6 to 9.  
+24 is a multiple of 6 (4 × 6), 8 (3 × 8), and also close to 4 × 6, 3 × 8, and 12 × 2.  
+The number 8 is one-third of 24, so multiplying 8 by 3 yields 24.  
+The number 6 is one-fourth of 24, so multiplying 6 by 4 yields 24.  
+The numbers 7 and 9 are not divisors of 24, but their difference is 2, which can serve as a scaling or adjustment factor.
+
+**Step 2:**  
+If we take 8 and 9, their difference is 1, which can be used as a neutral multiplier.  
+If we take 6 and 7, their difference is also 1.  
+But 8 and 6 are both divisors of 24, so perhaps they can be combined with the other two numbers to produce a 3 or a 4 multiplier.
+
+**Step 3:**  
+We see 8 × (9 − 7) = 8 × 2 = 16, not 24.  
+6 × (9 − 7) = 6 × 2 = 12, not 24.  
+But 6 / (9 − 7) = 6 / 2 = 3, and 8 × 3 = 24.  
+That uses all numbers: 6, 7, 8, 9.
+
+**Step 4:**  
+The relational structure:  
+- 9 and 7 create a difference of 2, which serves as a divisor.  
+- 6 divided by that difference yields 3, which is the scaling factor for 8 to reach 24.  
+- 8’s role is as the base number that, when tripled, gives 24.
+
+**Answer:** 8 × (6 / (9 − 7)) = 24",8 * (6 / (9 - 7)) = 24,True
+1,11,11,13,"Let’s reason step by step.  
+
+**Step 1:** The numbers are 1, 11, 11, 13.  
+- 13 is slightly larger than 12, which is half of 24, so 13 is just above the midpoint.  
+- 11 is slightly less than 12, so two 11s are both slightly below the midpoint.  
+- 1 is much smaller than 24, and can serve as a fine adjustment or identity element.  
+
+**Step 2:** The relation between 13 and 11: their difference is 2, which is a useful scaling or offset factor.  
+The two 11s can be combined to form 22, which is close to 24 — needing only +2.  
+
+**Step 3:** The difference 13 − 11 = 2 can be used to reach 24 from 22: 11 + 13 = 24 is not possible directly because we have two 11s and one 13, but 11 + 13 = 24 uses one 11 and one 13, leaving 11 and 1 unused.  
+
+**Step 4:** Another approach: 13 + 11 = 24 already, but then we have leftover 11 and 1. We can multiply (13 + 11) by 1, but that doesn’t use the other 11. Alternatively, use the two 11s to make 22, then add (13 − 11) = 2 to get 24.  
+
+That is: 11 + 11 + (13 − 11) = 22 + 2 = 24.  
+But note: 13 − 11 uses 13 and 11, but that 11 is already counted in the two 11s? No — we have only four numbers total: 1, 11, 11, 13.  
+
+Let’s check:  
+11 + 11 = 22  
+13 − 11 = 2  
+22 + 2 = 24  
+But we used three 11s? No — in 11 + 11 we used two 11s, and in 13 − 11 we used 13 and one 11 — but that 11 is already counted in the two 11s? Actually, that’s wrong — we can’t reuse the same 11.  
+
+So let’s assign:  
+First 11 + 13 = 24, but then leftover 11 and 1 — not all numbers used.  
+
+Better:  
+(13 − 11) = 2  
+Then 2 × 1 = 2  
+Then 11 × 2 = 22 — no, that’s 22, not 24.  
+
+Another path:  
+(13 + 11) = 24, but then multiply by 1 to use the 1, but still leftover 11 unused.  
+
+We must use all four numbers exactly once.  
+
+Consider:  
+(13 × 11 − 11) ÷ 1  
+= (143 − 11) ÷ 1  
+= 132 ÷ 1 = 132 — too big.  
+
+But if we do (13 + 11) × (11 − 9) — but 9 is not available.  
+
+Instead: (13 + 11) ÷ 1 × (11 − 10) — but 10 not available.  
+
+We can try: 13 + 11 = 24, but then multiply by (11/11) = 1, but that uses two 11s and 13, and 1 unused? No — 11/11 uses two 11s, so total: 13, 11, 11, and 1 unused? Actually 1 is not used.  
+
+But if we do (13 + 11) × (11/11) = 24 × 1 = 24, but 1 is unused — invalid.  
+
+So we must incorporate 1.  
+
+(13 − 1) × (11 + 11) / 11  
+= 12 × 22 / 11  
+= 264 / 11 = 24.  
+
+Yes — uses all numbers:  
+13 − 1 = 12  
+11 + 11 = 22  
+12 × 22 = 264  
+264 ÷ 11 = 24.  
+
+But ÷ 11 uses the third 11? No — we only have two 11s total. In 11 + 11 we used both 11s, so we can’t divide by 11 again. So that’s invalid.  
+
+Correct arrangement:  
+(13 − 1) × (11 + 11) / 11 — impossible because 11 appears three times.  
+
+But we can do:  
+(13 − 1) × (11 + 11) ÷ 11 — but 11 is already used in (11 + 11), so we can’t divide by 11 unless we have another 11. We only have two 11s, both used in (11 + 11), so no third 11 for division.  
+
+So that fails.  
+
+Let’s try:  
+(13 × 11 + 1) / (11 − 9) — 9 not available.  
+
+Another known solution for (1, 11, 11, 13):  
+(13 × 11 − 11) / (1 + …) — no.  
+
+Actually, known 24 game solution:  
+(11 × 13 − 11) / (1) — wait:  
+11 × 13 = 143  
+143 − 11 = 132  
+132 ÷ (1 + …) — but 1 plus what?  
+
+Better: (11 × 13 − 11) ÷ (1) — but that’s 132 ÷ 1 = 132, not 24.  
+
+But if we do: (11 × 13 − 11) ÷ (1) — no.  
+
+Let’s think: 12 × 2 = 24.  
+We can get 12 from 13 − 1.  
+We can get 2 from (11 + 11) / 11 — but that reuses 11.  
+
+Actually: (11 + 11) / 11 = 22/11 = 2.  
+But that uses three 11s.  
+
+But we only have two 11s. So impossible.  
+
+Known valid solution:  
+(13 − 11 / 11) × (1 + 1) — but that uses 1 twice.  
+
+Wait — we have only one 1.  
+
+Let’s check:  
+(13 − 11 / 11) × (1 + 1) — invalid because 1 appears once.  
+
+Actually, the known correct solution is:  
+(13 × 11 − 11) / (1 + …) — no.  
+
+Let’s recall: (13 − 1) × (11 + 11) / 11 — invalid.  
+
+But if we do: (13 − 1) × (11 + 11) / 11 — requires three 11s.  
+
+But we can do:  
+(13 − 1) × (11 / 11 + 1) — no, that’s 12 × (1 + 1) = 24, but 1 appears twice — invalid.  
+
+But we have only one 1.  
+
+Known 24-game solution for 1 11 11 13 is:  
+(13 − 1) × (11 / 11 + 1) — but that uses 1 twice.  
+
+But we have only one 1.  
+
+Let’s check carefully: numbers are 1, 11, 11, 13.  
+(13 − 1) = 12  
+11 / 11 = 1  
+Then 1 + 1 = 2 — but second 1 from where? We don’t have it.  
+
+So that fails.  
+
+Actually, the valid one is:  
+(13 × 11 − 11) / (1) — 132, not 24.  
+
+But 132 / 5.5 = 24 — but 5.5 not available.  
+
+Another: 11 + 13 = 24, but then 11 and 1 leftover — so multiply by 11/11:  
+(11 + 13) × (11/11) = 24, but 1 unused — invalid.  
+
+So we must use 1 in division:  
+(11 + 13) / 1 × (11/11) — still 1 unused? No — 11/11 uses two 11s, 13, and 1 unused? Actually 1 is used in division by 1.  
+
+Let’s write:  
+(11 + 13) ÷ 1 × (11 ÷ 11)  
+= 24 ÷ 1 × 1 = 24.  
+Uses: 11, 13, 1, 11, 11 — that’s three 11s! Invalid.  
+
+So impossible?  
+
+But known solution exists:  
+(13 − 11 / 11) × (1 + 1) — but that uses 1 twice.  
+
+But if we have 1, 11, 11, 13, we can do:  
+(13 − 11 / 11) × (1 + 1) — but 1 appears twice — not allowed.  
+
+So maybe no solution?  
+
+But 24 game rules: use + − × ÷ and each number once.  
+
+Let’s test:  
+11 × (13 − 11) + 1 = 11 × 2 + 1 = 22 + 1 = 23 — no.  
+
+(11 + 1) × (13 − 11) = 12 × 2 = 24 — yes!  
+
+That works:  
+(11 + 1) × (13 − 11)  
+= 12 × 2  
+= 24.  
+
+Uses: 11, 1, 13, 11 — all numbers once.  
+
+So the reasoning was:  
+- 13 − 11 = 2 gives the small difference.  
+- 11 + 1 = 12 gives the scaling base.  
+- Their product gives 24.  
+
+**Answer: (11 + 1) × (13 − 11) = 24**",(11 + 1) * (13 - 11) = 24,True
+1,8,10,11,"Let’s reason through the numbers 1, 8, 10, 11 in relation to 24.
+
+Step 1: The largest numbers here are 11 and 10, both slightly less than 12, which is half of 24. Their proximity to 12 suggests they could be adjusted toward 24 with a small multiplier or addition.  
+Step 2: The number 8 is one third of 24, so it has a clear scaling role if tripled.  
+Step 3: The number 1 is a neutral element that can shift values slightly without major scaling.  
+Step 4: The difference between 10 and 11 is 1, which can be used to fine-tune other operations.  
+Step 5: If 11 and 10 are combined with 8 and 1, one possible path is to use 8 × (11 – 10 + 1) = 16, but that’s too small. Alternatively, 11 + 10 + (8 – 5) would require making 5 from 1 and something, which isn’t possible here.  
+Step 6: Another relation: 11 + 13 = 24, and 13 can be made from 8, 10, and 1. Specifically, 10 + (8 – 5) = 13, but again 5 is not available.  
+Step 7: Instead, consider 8 × (11 – 10) = 8, then 8 + 1 = 9, not helpful. But 8 × (11 – 9) = 16, and 9 is not present.  
+Step 8: A known solution for these numbers is (11 – 8) × (10 – 1) = 3 × 9 = 27, too large.  
+Step 9: Another known solution: 11 + 10 + (8 – 5) — but 5 is not directly available. However, 8 – (1 + 10/…) — not fitting.  
+Step 10: Actually, 11 + 10 + 8 – 5 = 24, and 5 can be made from 1 and 4, but 4 is not present.  
+
+But a valid solution exists:  
+(11 × 8 – 10) ÷ (1 + 2) — but 2 is not present.  
+Instead: (11 × 10 + 1) ÷ (8 – 7) — but 7 is not present.  
+
+Let’s check: 11 + 10 + 8 = 29, too large.  
+We need 24 exactly.  
+
+Known working combination:  
+(11 – 10) × 8 = 8, then 8 × 3 = 24, but 3 is not present.  
+But 1 + (11 – 10) = 2, then 8 × (1 + 2) = 24 — but that uses 1 twice? No, we have only one 1.  
+
+Actually: 11 – 10 = 1, then 1 + 1 = 2 — but we don’t have two 1s.  
+
+Let’s try: 8 ÷ (11 – 10) = 8, then 8 × 3 = 24 — but 3 is not available.  
+
+But: 8 ÷ (1 ÷ 3) = 24, and 3 = 11 – 8 — yes, that works.  
+
+Let’s verify:  
+8 ÷ (1 ÷ (11 – 8)) = 8 ÷ (1 ÷ 3) = 8 × 3 = 24.  
+Numbers used: 8, 1, 11, 8 — but 8 is used twice? No, 11 – 8 uses the 8 we have.  
+
+Yes: 8 ÷ (1 ÷ (11 – 8)) = 24.  
+That uses each number once: 8, 1, 11, 8 — oh, 8 is repeated, so invalid.  
+
+But we have only one 8. So that’s invalid.  
+
+Let’s try: 8 × (11 – 8) = 24 — but again 8 repeated.  
+
+Known valid solution:  
+(11 × 8 – 10 – 1) ÷ 3 — but 3 not present.  
+
+Another: 11 + 8 + 10 – 5 — but 5 not present.  
+
+But 8 ÷ (1 ÷ 3) = 24, and 3 = (11 – 8) — but 8 repeated.  
+
+Actually, 11 – 8 = 3, then 8 ÷ (1 ÷ 3) = 24 — uses 8 twice. Invalid.  
+
+Let’s try: 12 × 2 = 24, but we don’t have 12 or 2 directly.  
+We can get 12 from 11 + 1, then multiply by 2 from 10 ÷ 5 — but 5 not present.  
+
+But 10 ÷ 5 not possible.  
+
+Another: 10 + 14 = 24, and 14 = 8 + 6 — but 6 not present.  
+
+Known working answer from 24 game:  
+(11 – 8) × (10 – 2) — but 2 not present.  
+
+Actually: (10 + 1 – 11) = 0, not helpful.  
+
+Let’s try: 8 ÷ (1 ÷ 3) = 24, and 3 = 11 – 8 — but 8 repeated.  
+
+But if we write it as 8 ÷ (1 ÷ (11 – 8)) — that’s invalid because 8 used twice.  
+
+But maybe: 8 × (1 + 2) = 24, and 2 = 11 – 9 — but 9 not present.  
+
+Let’s check: 10 – 1 = 9, then 11 – 9 = 2, then 8 × (1 + 2) — but 1 used twice.  
+
+No, that uses 1 twice.  
+
+Let’s check: 8 × (11 – 10 + 1) = 8 × 2 = 16, not 24.  
+
+Known actual solution:  
+(8 × (11 – 10 + 1)) = 16 — not 24.  
+
+But: 8 × (11 – (10 – 1)) = 8 × (11 – 9) = 8 × 2 = 16 — not 24.  
+
+Another: 11 × 8 = 88, 88 – 64 = 24 — but 64 not present.  
+
+But 64 = 8 × 8 — not possible.  
+
+Let’s try: 10 + 14 = 24, 14 = 8 + 6 — but 6 not present.  
+
+But 6 = 11 – 5 — not possible.  
+
+Known valid:  
+11 + 13 = 24, 13 = 8 + 5 — but 5 not present.  
+
+But 5 = 10 ÷ 2 — but 2 not present.  
+
+Actually, 2 = (11 – 9) — but 9 not present.  
+
+But 9 = 10 – 1 — yes: 11 – (10 – 1) = 2.  
+Then 10 ÷ 2 = 5.  
+Then 8 + 5 = 13.  
+Then 11 + 13 = 24.  
+
+Let’s check:  
+11 + (8 + (10 ÷ (11 – (10 – 1))))  
+= 11 + (8 + (10 ÷ 2))  
+= 11 + (8 + 5)  
+= 11 + 13  
+= 24.  
+
+Numbers used: 11, 8, 10, 11, 10, 1 — oh, 11 and 10 repeated. Invalid.  
+
+So that’s invalid.  
+
+But if we rewrite grouping differently:  
+11 + 8 + 10 ÷ (11 – 10 + 1)  
+= 11 + 8 + 10 ÷ 2  
+= 11 + 8 + 5  
+= 24.  
+
+That uses each number once: 11, 8, 10, 11? No, 11 appears twice.  
+
+So still invalid.  
+
+Let’s try: 11 + 8 + 10 ÷ ( – ) — we can’t reuse 11.  
+
+But we can do: 11 + 8 + 10 ÷ 2, but 2 must come from (something).  
+
+We have 1 left: 2 = 1 + 1 — but only one 1.  
+
+So no.  
+
+Known actual 24 game solution for 1 8 10 11:  
+(11 – 8) × (10 – 2) — but 2 not present.  
+
+Actually, the valid one is:  
+(11 × 8 + 1 – 10) ÷ 3 — but 3 not present.  
+
+But 3 = 11 – 8 — yes:  
+(11 × 8 + 1 – 10) ÷ (11 – 8)  
+= (88 + 1 – 10) ÷ 3  
+= 79 ÷ 3 — not 24.  
+
+So not correct.  
+
+Let’s try: 8 ÷ (1 ÷ 3) = 24, 3 = 11 – 8 — but 8 repeated.  
+
+But if we do 8 ÷ (1 ÷ (11 – 8)) — invalid.  
+
+Actually, known working:  
+(10 – 8) × (11 + 1) = 2 × 12 = 24 — yes!  
+
+Check: 10 – 8 = 2, 11 + 1 = 12, 2 × 12 = 24.  
+Uses each number once.  
+
+That’s the valid solution.  
+
+Answer: (10 – 8) × (11 + 1) = 24",(10 – 8) × (11 + 1) = 24,True
+2,3,6,9,"Let’s reason through the numbers 2, 3, 6, 9 in relation to 24.
+
+**Step 1:**  
+The largest number here is 9, which is less than 24 but not a divisor of 24 directly.  
+6 is a quarter of 24, and also 24 ÷ 6 = 4, so 6 can scale to 24 with a factor of 4.  
+3 and 2 are small numbers that may serve as multipliers or adjustments.
+
+**Step 2:**  
+The numbers 9 and 3 have a clear relationship: 9 ÷ 3 = 3, which is a small integer.  
+Similarly, 6 ÷ 2 = 3, so both pairs (9,3) and (6,2) yield the same ratio 3.  
+This repeated factor of 3 suggests a possible multiplicative path.
+
+**Step 3:**  
+If we take 9 − 3 = 6, we get a number equal to the other 6 in the set.  
+But that might be redundant. Alternatively, 9 + 3 = 12, and 12 × 2 = 24, but then the 6 is unused.  
+We must incorporate all four numbers.
+
+**Step 4:**  
+Another approach: 6 ÷ 2 = 3, and 9 ÷ 3 = 3, so (6 ÷ 2) × (9 ÷ 3) = 3 × 3 = 9 — not 24.  
+But if we instead multiply 6 × 9 = 54, then divide by (3 × 2) = 6, we get 54 ÷ 6 = 9 — still not 24.
+
+**Step 5:**  
+Consider 6 × (9 + 2 − 3) = 6 × 8 = 48 — too large.  
+But if we divide 48 by 2, that’s 24, but we already used 2 in the expression — no, that would reuse 2.  
+We can’t reuse numbers.
+
+**Step 6:**  
+Another path: 9 × 2 = 18, 18 + 6 = 24, but then 3 is unused.  
+We need to incorporate 3 without changing the value 24. Multiplying by (3 ÷ 3) = 1 would use both 3’s, but we only have one 3.  
+So that fails.
+
+**Step 7:**  
+Let’s try: (9 − 3) = 6, then 6 × 2 = 12, then 12 × (6 ÷ 3) — but that reuses 6.  
+We have only one 6.
+
+**Step 8:**  
+Better: (9 × 6) ÷ (3 ÷ 2) — check: 54 ÷ 1.5 = 36 — not 24.  
+(9 − 3) × (6 − 2) = 6 × 4 = 24 — yes, that uses each number once.
+
+**Step 9:**  
+Check: 9 − 3 = 6, 6 − 2 = 4, 6 × 4 = 24.  
+All numbers used exactly once.
+
+---
+
+**Answer:** (9 − 3) × (6 − 2) = 24",(9 - 3) * (6 - 2) = 24,True
+1,3,5,9,"Let’s reason step by step.  
+
+**Step 1:** The largest number is 9, which is less than 24 but can be scaled up by a factor close to 3 to reach 24.  
+**Step 2:** The number 5 is slightly larger than half of 9, and 3 is a small integer that can serve as a multiplier or part of an additive adjustment.  
+**Step 3:** The number 1 is a neutral element for multiplication or addition, but here it might help adjust a product or sum slightly.  
+**Step 4:** A possible path: 9 and 3 can produce 27 (9 × 3), which is 3 more than 24. If 5 and 1 can yield 3, then 27 − 3 = 24. Indeed, 5 − 1 = 4, not 3 — but 5 − (3 − 1) = 3. That suggests a grouping: 9 × 3 − (5 − (3 − 1)) is too nested; better: 9 × 3 − (5 − (3 − 1)) simplifies to 27 − (5 − 2) = 27 − 3 = 24.  
+
+Let’s check grouping:  
+(3 − 1) = 2  
+5 − 2 = 3  
+9 × 3 = 27  
+27 − 3 = 24.  
+
+That works.  
+
+**Step 5:** The number 3 is used twice, but the puzzle allows each number exactly once — so this fails. We must use 1, 3, 5, 9 exactly once.  
+
+**Step 6:** Another approach: 24 is 9 + 15. 15 can be 5 × 3. Then 9 + 5 × 3 = 24, but that uses 9, 5, 3 and leaves 1 unused. To incorporate 1, multiply by 1 somewhere? That would change the value unless it’s in a neutral position.  
+
+But 1 could be used in division: (9 − 1) × 3 = 8 × 3 = 24, but that uses 9, 1, 3 and leaves 5 unused.  
+
+**Step 7:** Try (9 − 5 + 1) × 3 = (5) × 3 = 15, no.  
+
+**Step 8:** Try (9 × 5 + 3) / (1 + 1) — invalid because 1 is repeated.  
+
+**Step 9:** Try (9 − 1) × (5 − 2) — but 2 not available.  
+
+**Step 10:** Try 9 × 3 − (5 − 2) — no 2.  
+
+**Step 11:** Try (5 − 1) × (9 − 3) = 4 × 6 = 24. Uses 5, 1, 9, 3 exactly once.  
+
+Yes — that works cleanly.  
+
+**Step 12:** So 9 − 3 = 6, 5 − 1 = 4, 6 × 4 = 24.  
+
+---
+
+Answer: (9 - 3) × (5 - 1) = 24",(9 - 3) * (5 - 1) = 24,True
+3,3,7,12,"Step 1: The number 12 is exactly half of 24, suggesting it can serve as a strong base for scaling.  
+Step 2: The number 7 is relatively close to 6, which is a quarter of 24, but here it may act as an adjustment number rather than a primary scaling factor.  
+Step 3: The two 3s are small divisors of 24; one 3 is an eighth of 24, and together they might help reach a complementary value.  
+Step 4: The relation between 7 and 3 yields 4, which can bridge to 24 when combined with 12 through multiplication.  
+
+Answer: (7 - 3) × (12 ÷ 3) = 24",(7 - 3) * (12 / 3) = 24,False

@@ -1,0 +1,808 @@
+num1,num2,num3,num4,raw_output,expression,valid
+4,5,7,9,"Let’s go through the workflow step-by-step.  
+
+**Step 1 – Permutations of numbers**  
+Numbers: 4, 5, 7, 9  
+All permutations (4! = 24):  
+(4,5,7,9), (4,5,9,7), (4,7,5,9), (4,7,9,5), (4,9,5,7), (4,9,7,5),  
+(5,4,7,9), (5,4,9,7), (5,7,4,9), (5,7,9,4), (5,9,4,7), (5,9,7,4),  
+(7,4,5,9), (7,4,9,5), (7,5,4,9), (7,5,9,4), (7,9,4,5), (7,9,5,4),  
+(9,4,5,7), (9,4,7,5), (9,5,4,7), (9,5,7,4), (9,7,4,5), (9,7,5,4)  
+
+---
+
+**Step 2 – Expression structures**  
+Possible binary tree structures for 4 numbers (5 standard forms):  
+
+1. `((a b) c) d`  
+2. `(a (b c)) d`  
+3. `a ((b c) d)`  
+4. `a (b (c d))`  
+5. `(a b) (c d)`  
+
+---
+
+**Step 3 – Operator combinations**  
+For each structure and each permutation, try all combinations of +, -, *, / for the 3 operator slots.  
+That’s \( 24 \times 5 \times 4^3 = 24 \times 5 \times 64 = 7680 \) expressions to check in principle (but we can stop when we find one that works).  
+
+---
+
+**Step 4 – Evaluate**  
+Let’s test systematically:  
+
+Try `(9 - 7) * (5 + 4)`  
+= \( 2 * 9 = 18 \) → no  
+
+Try `(9 - 7) * (4 * 5)`  
+= \( 2 * 20 = 40 \) → no  
+
+Try `(9 * 4) - (7 - 5)`  
+= \( 36 - 2 = 34 \) → no  
+
+Try `(9 - 5) * (7 - 4)`  
+= \( 4 * 3 = 12 \) → no  
+
+Try `(7 - (9 - 5)) * 4`  
+= \( (7 - 4) * 4 = 3 * 4 = 12 \) → no  
+
+Try `(4 * 7) - (9 - 5)`  
+= \( 28 - 4 = 24 \) → yes!  
+
+So expression: `4 * 7 - (9 - 5)`  
+
+---
+
+**Step 5 – Check validity**  
+`4 * 7 - (9 - 5)` = \( 28 - 4 = 24 \) ✅  
+Uses each number exactly once.  
+
+---
+
+**Step 6 – Final answer**  
+
+**Answer: 4 * 7 - (9 - 5) = 24**",4 * 7 - (9 - 5) = 24,True
+1,2,8,13,"Let’s go step-by-step.
+
+---
+
+**Step 1 – Permutations of the numbers**
+
+Numbers: 1, 2, 8, 13  
+All permutations (4! = 24):
+
+(1, 2, 8, 13)  
+(1, 2, 13, 8)  
+(1, 8, 2, 13)  
+(1, 8, 13, 2)  
+(1, 13, 2, 8)  
+(1, 13, 8, 2)  
+(2, 1, 8, 13)  
+(2, 1, 13, 8)  
+(2, 8, 1, 13)  
+(2, 8, 13, 1)  
+(2, 13, 1, 8)  
+(2, 13, 8, 1)  
+(8, 1, 2, 13)  
+(8, 1, 13, 2)  
+(8, 2, 1, 13)  
+(8, 2, 13, 1)  
+(8, 13, 1, 2)  
+(8, 13, 2, 1)  
+(13, 1, 2, 8)  
+(13, 1, 8, 2)  
+(13, 2, 1, 8)  
+(13, 2, 8, 1)  
+(13, 8, 1, 2)  
+(13, 8, 2, 1)
+
+---
+
+**Step 2 – Expression structures**
+
+Possible binary tree structures for 4 numbers (with 3 operators) — standard 5 types:
+
+1. `((a ? b) ? c) ? d`  
+2. `(a ? (b ? c)) ? d`  
+3. `(a ? b) ? (c ? d)`  
+4. `a ? ((b ? c) ? d)`  
+5. `a ? (b ? (c ? d))`
+
+---
+
+**Step 3 – Try operators and permutations**
+
+We need to check systematically, but I’ll skip listing all combinations here (too many).  
+Let’s try to find one working combination manually for efficiency, but still following the workflow.
+
+---
+
+**Step 4 – Evaluate**
+
+Let’s test one candidate:  
+Numbers: (8, 2, 1, 13)  
+Structure: `(a ? b) ? (c ? d)` → `(8 / 2) * (13 - 1)`  
+
+Compute:  
+8 / 2 = 4  
+13 - 1 = 12  
+4 * 12 = 48 → not 24.
+
+---
+
+Try `(13 - 1) / (8 / 2)` → same as 12 / 4 = 3 → no.
+
+Try `(13 - 1) * (8 / 2)` → 12 * 4 = 48 → no.
+
+Try `(8 - 2) * (13 - 1)` → 6 * 12 = 72 → no.
+
+---
+
+Try `(13 + 8 + 2 + 1)` = 24? 13 + 8 = 21, + 2 = 23, + 1 = 24. Yes!  
+That’s `((13 + 8) + 2) + 1` = 24.
+
+Check:  
+Numbers: (13, 8, 2, 1)  
+Structure: `((a + b) + c) + d`  
+13 + 8 = 21  
+21 + 2 = 23  
+23 + 1 = 24 ✅
+
+---
+
+**Step 5 – Valid expression**
+
+Expression: `((13 + 8) + 2) + 1` = 24
+
+---
+
+**Step 6 – Final answer**
+
+Answer: ((13 + 8) + 2) + 1 = 24
+
+---
+
+**Final:**
+
+Answer: ((13 + 8) + 2) + 1 = 24",((13 + 8) + 2) + 1 = 24,True
+4,6,6,9,"Let’s go step by step.
+
+---
+
+**Step 1 – Permutations of the four numbers**  
+Numbers: 4, 6, 6, 9  
+All permutations (4! = 24, but since there are duplicate 6’s, distinct permutations are fewer):  
+
+We’ll list distinct permutations (treating 6a and 6b as same):  
+1. (4, 6, 6, 9)  
+2. (4, 6, 9, 6)  
+3. (4, 9, 6, 6)  
+4. (6, 4, 6, 9)  
+5. (6, 4, 9, 6)  
+6. (6, 6, 4, 9)  
+7. (6, 6, 9, 4)  
+8. (6, 9, 4, 6)  
+9. (6, 9, 6, 4)  
+10. (9, 4, 6, 6)  
+11. (9, 6, 4, 6)  
+12. (9, 6, 6, 4)  
+
+---
+
+**Step 2 – Expression structures**  
+Possible binary tree structures for 4 numbers (with 3 operators) — common ones:  
+
+1. `((a b) c) d`  
+2. `(a (b c)) d`  
+3. `a ((b c) d)`  
+4. `a (b (c d))`  
+5. `(a b) (c d)`  
+
+---
+
+**Step 3 – Try all operator combinations**  
+Operators: +, -, *, /  
+
+We can’t enumerate all here, but let’s test a known working one:  
+
+Take permutation: (6, 9, 4, 6)  
+Structure: `(a b) (c d)` → `(6 + 9) × (4 - 6)` → 15 × (-2) = -30 (no)  
+
+Try `(a b) (c d)` with `(9 - 6) × (4 + 6)`? That’s 3 × 10 = 30 (no)  
+
+Try `(6 × 4) × (9 - 6)` = 24 × 3 = 72 (no)  
+
+Try `(6 × 4) + (9 - 6)` = 24 + 3 = 27 (no)  
+
+Try `(6 + 6) × (9 - 4)` = 12 × 5 = 60 (no)  
+
+Try `6 / (9 - 6) × 4` — but that’s not `(a b) (c d)` structure, more like `(a / (b - c)) × d` which is structure 3: `a ((b c) d)` with `6 * (4 / (9 - 6))` = 6 × (4 / 3) = 8 (no)  
+
+---
+
+Let’s test known solution:  
+`(9 - 6) × 6 + 6` = 3 × 6 + 6 = 18 + 6 = 24  
+
+Check structure: `((9 - 6) × 6) + 6` — structure 1: `((a b) c) d`  
+Numbers: (9, 6, 6, 4) — wait, that’s not our set, we have two 6’s, not a 4.  
+
+Actually, our set is 4, 6, 6, 9.  
+
+Known working: `(6 + 6) / 4 × 9`? That’s 12 / 4 × 9 = 3 × 9 = 27 (no)  
+
+---
+
+Let’s try `6 × (9 - 6) + 6`? That’s 6 × 3 + 6 = 24 — but we haven’t used 4.  
+
+We must use 4, 6, 6, 9 exactly once.  
+
+---
+
+Try: `6 × 4 × (9 - 6)` uses 6 twice? No, we have two 6’s, yes. But that’s 24 × 3 = 72 (no).  
+
+Try: `(6 × 4) / (9 - 6)` = 24 / 3 = 8 (no).  
+
+Try: `(6 + 6) × (9 - 4)` — but 9 - 4 = 5, 12 × 5 = 60 (no).  
+
+---
+
+Known solution from 24 game database:  
+For 4, 6, 6, 9:  
+`(9 × 4) - (6 + 6)` = 36 - 12 = 24  
+
+Check: uses 9, 4, 6, 6 exactly once.  
+
+Structure: `(a b) (c d)` with `(9 × 4) - (6 + 6)`.
+
+---
+
+**Step 4 – Evaluate**  
+`9 × 4 = 36`  
+`6 + 6 = 12`  
+`36 - 12 = 24` ✅  
+
+---
+
+**Step 5 – Valid expression**  
+Yes, equals 24.  
+
+---
+
+**Step 6 – Final answer**  
+
+**Answer: (9 × 4) - (6 + 6) = 24**  
+
+---
+
+**Final:**  
+Answer: (9 × 4) - (6 + 6) = 24",(9 * 4) - (6 + 6) = 24,True
+1,4,4,8,"Let’s go through the workflow step by step.  
+
+---
+
+**Step 1 – Permutations of the numbers**  
+Input: 1, 4, 4, 8  
+All permutations (4! = 24, but with repeated 4’s, some are duplicates):  
+We can list them systematically:  
+
+(1, 4, 4, 8), (1, 4, 8, 4), (1, 8, 4, 4),  
+(4, 1, 4, 8), (4, 1, 8, 4), (4, 4, 1, 8), (4, 4, 8, 1), (4, 8, 1, 4), (4, 8, 4, 1),  
+(8, 1, 4, 4), (8, 4, 1, 4), (8, 4, 4, 1)  
+
+---
+
+**Step 2 – Expression structures**  
+Binary tree structures for 4 numbers (5 possible):  
+1. ((a b) c) d  
+2. (a (b c)) d  
+3. (a b) (c d)  
+4. a ((b c) d)  
+5. a (b (c d))  
+
+---
+
+**Step 3 – Operator combinations**  
+For each structure and permutation, try all combinations of +, -, *, / for the 3 operator slots (4^3 = 64 combinations).  
+
+---
+
+**Step 4 – Evaluate**  
+We need to find one that equals 24.  
+
+Let’s test some manually to find one quickly:  
+
+Try: (8 - 4) * (4 + 1)  
+= 4 * 5 = 20 ❌  
+
+Try: (8 - 4) * 4 * 1 = 4 * 4 * 1 = 16 ❌  
+
+Try: (8 / 4) * (4 + 8) — uses 8 twice ❌  
+
+Try: (4 + 8) * (4 / 2) — uses 2 ❌  
+
+Try: 8 / (1 - (4/4)) — but 4/4 = 1, 1-1=0, division by 0 ❌  
+
+Try: (4 * 8) - (4 * 1) = 32 - 4 = 28 ❌  
+
+Try: (4 * 8) - (4 + 4) = 32 - 8 = 24 ✅  
+But that uses 4, 8, 4, 4 — yes, our numbers are 1, 4, 4, 8. So 4, 8, 4, 4 is not our set — we have a 1, not an extra 4.  
+
+Try: (4 * 4) + 8 * 1 = 16 + 8 = 24 ✅  
+Check: 4 * 4 = 16, 16 + 8 = 24, 24 * 1 = 24 — but that’s actually (4 * 4) + (8 * 1) = 16 + 8 = 24.  
+Yes, that works: (4 × 4) + (8 × 1) = 16 + 8 = 24.  
+
+Numbers used: 4, 4, 8, 1 exactly once.  
+
+---
+
+**Step 5 – Valid expressions**  
+(4 × 4) + (8 × 1) = 24  
+
+---
+
+**Step 6 – Final answer**  
+
+Answer: (4 × 4) + (8 × 1) = 24",(4 * 4) + (8 * 1) = 24,True
+1,5,10,11,"Let’s go through the workflow step by step.  
+
+**Step 1 – Permutations of numbers**  
+Input numbers: 1, 5, 10, 11  
+All permutations:  
+(1, 5, 10, 11), (1, 5, 11, 10), (1, 10, 5, 11), (1, 10, 11, 5), (1, 11, 5, 10), (1, 11, 10, 5),  
+(5, 1, 10, 11), (5, 1, 11, 10), (5, 10, 1, 11), (5, 10, 11, 1), (5, 11, 1, 10), (5, 11, 10, 1),  
+(10, 1, 5, 11), (10, 1, 11, 5), (10, 5, 1, 11), (10, 5, 11, 1), (10, 11, 1, 5), (10, 11, 5, 1),  
+(11, 1, 5, 10), (11, 1, 10, 5), (11, 5, 1, 10), (11, 5, 10, 1), (11, 10, 1, 5), (11, 10, 5, 1)  
+
+---
+
+**Step 2 – Expression structures**  
+Binary tree structures for 4 numbers (with 3 operators) correspond to the 5 possible bracket patterns:  
+
+1. `((a ? b) ? c) ? d`  
+2. `(a ? (b ? c)) ? d`  
+3. `(a ? b) ? (c ? d)`  
+4. `a ? ((b ? c) ? d)`  
+5. `a ? (b ? (c ? d))`  
+
+---
+
+**Step 3 – Operator combinations**  
+For each structure and each permutation, try all combinations of +, -, *, / for the 3 operator slots.  
+That’s \(4^3 = 64\) operator combinations per structure per permutation.  
+
+---
+
+**Step 4 – Evaluate**  
+We need to find one combination that yields 24.  
+
+Let’s test a known solution:  
+Try `(11 * 10 + 1) / 5` → `(110 + 1) / 5 = 111 / 5 = 22.2` (no)  
+
+Try `(11 - 1) * (10 - 5)` → `10 * 5 = 50` (no)  
+
+Try `(11 - 10 + 1) * 5` → `(1 + 1) * 5 = 10` (no)  
+
+Try `(11 - 1) * 5 - 10` → `10 * 5 - 10 = 50 - 10 = 40` (no)  
+
+Try `(11 - 1) / 5 * 10` → `10 / 5 * 10 = 2 * 10 = 20` (no)  
+
+Try `(11 * 5 - 1) - 10` → `(55 - 1) - 10 = 54 - 10 = 44` (no)  
+
+Try `(11 - 1) * (10 / 5)` → `10 * 2 = 20` (no)  
+
+Try `(11 + 1) * (10 / 5)` → `12 * 2 = 24` (yes)  
+
+Check: `(11 + 1) * 10 / 5` = `12 * 10 / 5` = `120 / 5` = `24`.  
+
+---
+
+**Step 5 – Valid expressions**  
+Expression: `(11 + 1) * 10 / 5` equals 24 exactly.  
+
+---
+
+**Step 6 – Final answer**  
+
+**Answer: (11 + 1) * 10 / 5 = 24**",(11 + 1) * 10 / 5 = 24,True
+3,4,6,11,"Let’s go step by step.
+
+---
+
+**Step 1 – Generate all permutations of the four numbers**  
+Numbers: 3, 4, 6, 11  
+All permutations: \(4! = 24\) permutations.  
+Example: (3, 4, 6, 11), (3, 4, 11, 6), (3, 6, 4, 11), … etc.
+
+---
+
+**Step 2 – All possible expression structures**  
+Binary tree structures for 4 numbers correspond to the 5 possible bracket patterns (ignoring commutations):  
+
+1. `((a ? b) ? c) ? d`  
+2. `(a ? (b ? c)) ? d`  
+3. `(a ? b) ? (c ? d)`  
+4. `a ? ((b ? c) ? d)`  
+5. `a ? (b ? (c ? d))`  
+
+---
+
+**Step 3 – Try all operator combinations**  
+For each structure and permutation, try \(4^3 = 64\) operator combinations (+, -, *, /).
+
+---
+
+**Step 4 – Evaluate**  
+We must check each expression for arithmetic validity (no division by zero) and compute the result.
+
+---
+
+**Step 5 – Filter expressions equal to 24**  
+Let’s try to find one quickly by inspection before enumerating all.
+
+---
+
+**Known solution check**  
+Try: \( (11 - 6 + 3) \times 4 \)  
+= \( (8) \times 4 = 32\) (not 24)  
+
+Try: \( (6 \times 11) + 3 \) … no, uses only 3 numbers.  
+
+Try: \( (6 - 3) \times 11 - 4 \)  
+= \( 3 \times 11 - 4 = 33 - 4 = 29 \) (no)  
+
+Try: \( 6 \div (3 - 11) \times 4 \) … gives negative.  
+
+Try: \( 11 + 6 + (3 \times 4) - ? \) … not using all numbers once.  
+
+Try: \( (11 + 4 - 6) \times 3 \)  
+= \( (9) \times 3 = 27 \) (no)  
+
+Try: \( (11 \times 6) - (4 \times 3) \)  
+= \( 66 - 12 = 54 \) (no)  
+
+Try: \( (11 - 3) \times 6 \div 4 \)  
+= \( 8 \times 6 \div 4 = 48 \div 4 = 12 \) (no)  
+
+Try: \( (11 \times 3) - 6 - 4 \)  
+= \( 33 - 10 = 23 \) (no)  
+
+Try: \( (11 - 6) \times 3 \times 4 \)  
+= \( 5 \times 3 \times 4 = 60 \) (no)  
+
+Try: \( 6 \times (11 + 3 - 4) / ? \) … not using all numbers once.  
+
+Try: \( 4 \times 6 \times (11 - 3) / ? \) … uses only 3 numbers.  
+
+Try: \( 11 + 13 \) … impossible.  
+
+Try: \( (4 \times 6) \times (11 - 3) / ? \) … no.  
+
+Try: \( 6 / ( (11 - 4) / 3 ) \) — Wait: \( 6 / (7 / 3) = 6 \times 3 / 7 = 18/7 \) (no)  
+
+Try: \( (6 \times 4) \times (11 - 3) / ? \) … uses only 3 numbers.  
+
+Try: \( 3 \times 4 + 6 + 11 \) — Wait: \( 12 + 6 + 11 = 29 \) (no)  
+
+Try: \( (3 \times 4) + 6 + 11 \) = 29 (no)  
+
+Try: \( (11 \times 4) - (6 + 3) \) = \( 44 - 9 = 35 \) (no)  
+
+Try: \( (11 - 6) \times 3 + 4 \) = \( 5 \times 3 + 4 = 15 + 4 = 19 \) (no)  
+
+Try: \( (11 + 6 - 3) \times 4 \) = \( 14 \times 4 = 56 \) (no)  
+
+Try: \( 11 + 13 \) … impossible.  
+
+Try: \( 6 / (3 / (11 - 4)) \) = \( 6 / (3 / 7) = 6 \times 7 / 3 = 14 \) (no)  
+
+Try: \( (6 - 4) \times 3 + 11 \) = \( 2 \times 3 + 11 = 17 \) (no)  
+
+Try: \( (11 \times 3) - (6 + 4) \) = \( 33 - 10 = 23 \) (no)  
+
+Try: \( (11 - 3) \times (6 - 4) \) = \( 8 \times 2 = 16 \) (no)  
+
+Try: \( 11 \times (6 - 4) + 3 \) = \( 11 \times 2 + 3 = 25 \) (no)  
+
+Try: \( (11 - 6 + 3) \times 4 \) = \( 8 \times 4 = 32 \) (no)  
+
+Try: \( 6 \times 11 / (4 - 3) \) = \( 66 / 1 = 66 \) (no)  
+
+Try: \( (11 + 3) \times 6 / 4 \) = \( 14 \times 6 / 4 = 84 / 4 = 21 \) (no)  
+
+Try: \( (11 \times 4 + 6) / 3 \) — Wait: \( (44 + 6) / 3 = 50 / 3 \) (no)  
+
+Try: \( (11 - 4) \times 3 + 6 \) = \( 7 \times 3 + 6 = 27 \) (no)  
+
+Try: \( 4 \times (11 - 6 + 3) \) = \( 4 \times 8 = 32 \) (no)  
+
+Try: \( 6 \times 4 / (11 - 3) \) = \( 24 / 8 = 3 \) (no)  
+
+Try: \( (6 \times 11 - 4) / 3 \) = \( (66 - 4) / 3 = 62 / 3 \) (no)  
+
+Try: \( (11 - 6) \times 4 + 3 \) = \( 5 \times 4 + 3 = 23 \) (no)  
+
+Try: \( (11 \times 3 + 4) - 6 \) = \( (33 + 4) - 6 = 31 \) (no)  
+
+Try: \( (11 + 4) \times 3 - 6 \) = \( 15 \times 3 - 6 = 45 - 6 = 39 \) (no)  
+
+Try: \( (6 + 11 - 3) \times 4 \) = \( 14 \times 4 = 56 \) (no)  
+
+Try: \( (11 + 6) \times 3 / 4 \) = \( 17 \times 3 / 4 = 51/4 \) (no)  
+
+Try: \( 4 \times 6 / (11 - 3) \) = \( 24 / 8 = 3 \) (no)  
+
+Try: \( 11 + 4 + 3 + 6 \) = 24 — Wait! That’s \( 11 + 4 + 3 + 6 = 24 \). Yes!  
+
+Check: \( 11 + 4 = 15, + 3 = 18, + 6 = 24 \). Uses each number exactly once, only + operation.  
+
+---
+
+**Step 6 – Final answer**  
+Expression: \( 11 + 4 + 3 + 6 \)  
+
+---
+
+**Answer: 11 + 4 + 3 + 6 = 24**",11 + 4 + 3 + 6 = 24,True
+2,4,8,9,"Let’s go through the steps systematically.  
+
+**Step 1 – Permutations of the numbers**  
+Numbers: 2, 4, 8, 9  
+All permutations (4! = 24):  
+(2, 4, 8, 9), (2, 4, 9, 8), (2, 8, 4, 9), (2, 8, 9, 4), (2, 9, 4, 8), (2, 9, 8, 4),  
+(4, 2, 8, 9), (4, 2, 9, 8), (4, 8, 2, 9), (4, 8, 9, 2), (4, 9, 2, 8), (4, 9, 8, 2),  
+(8, 2, 4, 9), (8, 2, 9, 4), (8, 4, 2, 9), (8, 4, 9, 2), (8, 9, 2, 4), (8, 9, 4, 2),  
+(9, 2, 4, 8), (9, 2, 8, 4), (9, 4, 2, 8), (9, 4, 8, 2), (9, 8, 2, 4), (9, 8, 4, 2)  
+
+---
+
+**Step 2 – Expression structures**  
+Possible binary tree structures for 4 numbers (standard RPN forms or fully parenthesized forms):  
+
+1. `((a op b) op c) op d`  
+2. `(a op (b op c)) op d`  
+3. `(a op b) op (c op d)`  
+4. `a op ((b op c) op d)`  
+5. `a op (b op (c op d))`  
+
+---
+
+**Step 3 – Try operators**  
+We’d try all \(4^3 = 64\) operator combinations for each structure and each permutation.  
+
+---
+
+**Step 4 – Evaluate**  
+Let’s skip to searching for a known solution:  
+A known working one: \( (9 - 4 - 2) \times 8 \)  
+Check: \(9 - 4 = 5\), \(5 - 2 = 3\), \(3 \times 8 = 24\)  
+
+That uses numbers 9, 4, 2, 8 in order.  
+
+---
+
+**Step 5 – Valid expression**  
+Yes, equals 24 exactly.  
+
+---
+
+**Step 6 – Final answer**  
+
+**Answer: (9 - 4 - 2) * 8 = 24**",(9 - 4 - 2) * 8 = 24,True
+1,4,5,13,"Let’s go through the steps systematically.  
+
+**Step 1 – Permutations of numbers**  
+Numbers: 1, 4, 5, 13  
+All permutations:  
+(1, 4, 5, 13), (1, 4, 13, 5), (1, 5, 4, 13), (1, 5, 13, 4), (1, 13, 4, 5), (1, 13, 5, 4),  
+(4, 1, 5, 13), (4, 1, 13, 5), (4, 5, 1, 13), (4, 5, 13, 1), (4, 13, 1, 5), (4, 13, 5, 1),  
+(5, 1, 4, 13), (5, 1, 13, 4), (5, 4, 1, 13), (5, 4, 13, 1), (5, 13, 1, 4), (5, 13, 4, 1),  
+(13, 1, 4, 5), (13, 1, 5, 4), (13, 4, 1, 5), (13, 4, 5, 1), (13, 5, 1, 4), (13, 5, 4, 1)  
+
+---
+
+**Step 2 – Expression structures**  
+Possible binary tree structures for 4 numbers (with 3 operators) are essentially the 5 standard RPN forms (up to symmetry):  
+1. `((a op b) op c) op d`  
+2. `(a op (b op c)) op d`  
+3. `(a op b) op (c op d)`  
+4. `a op ((b op c) op d)`  
+5. `a op (b op (c op d))`  
+
+---
+
+**Step 3 – Operator combinations**  
+For each structure and permutation, try all combinations of +, -, *, / for the 3 operator slots.  
+We can’t list all here, but let’s search for one that gives 24.  
+
+---
+
+**Step 4 – Evaluate**  
+Let’s test a known solution:  
+(13 - 1) / (4 / (5 + ?)) — not matching yet.  
+
+Better: Try (13 - 1) × (5 - 4)?? No, that’s 12.  
+
+Known answer: (13 - 1) × (4 - (5 - 4))? That reuses 4. Not allowed.  
+
+Another: (13 - 5) × (4 - 1) = 8 × 3 = 24. Uses 13, 5, 4, 1 exactly once.  
+
+Check: (13 - 5) = 8, (4 - 1) = 3, 8 × 3 = 24.  
+
+Expression: `(13 - 5) * (4 - 1)`  
+
+---
+
+**Step 5 – Check validity**  
+Numbers used: 13, 5, 4, 1 each exactly once.  
+Operators: -, *, -  
+Result: 24  
+
+---
+
+**Step 6 – Final answer**  
+
+**Answer: (13 - 5) * (4 - 1) = 24**",(13 - 1) * (4 - (5 - 4)) = 24,False
+2,2,7,12,"Let’s follow the workflow step by step.  
+
+**Step 1 – Permutations of numbers**  
+Numbers: 2, 2, 7, 12  
+All permutations (4! = 24, but since there are duplicates, fewer distinct permutations):  
+
+We can list a few: (2, 2, 7, 12), (2, 2, 12, 7), (2, 7, 2, 12), (2, 7, 12, 2), (2, 12, 2, 7), (2, 12, 7, 2),  
+(7, 2, 2, 12), (7, 2, 12, 2), (7, 12, 2, 2), (12, 2, 2, 7), (12, 2, 7, 2), (12, 7, 2, 2).  
+
+---
+
+**Step 2 – Expression structures**  
+Possible binary tree structures for 4 numbers (with 3 operators):  
+
+1. `((a op b) op c) op d`  
+2. `(a op (b op c)) op d`  
+3. `(a op b) op (c op d)`  
+4. `a op ((b op c) op d)`  
+5. `a op (b op (c op d))`  
+
+---
+
+**Step 3 – Try combinations**  
+We need to find one combination that yields 24.  
+
+Let’s test manually:  
+
+Try `(12 - 7) * 2 * 2`  
+= `5 * 2 * 2` = `20` (no)  
+
+Try `(12 / 2) + (7 * 2)`  
+= `6 + 14` = `20` (no)  
+
+Try `(12 * 2) + (7 - 2)`  
+= `24 + 5` = `29` (no)  
+
+Try `(7 - 2) * (12 / 2)`  
+= `5 * 6` = `30` (no)  
+
+Try `(2 + 2) * 7 - 12`  
+= `4 * 7 - 12` = `28 - 12` = `16` (no)  
+
+Try `(2 * 7) + (2 + 12)`  
+= `14 + 14` = `28` (no)  
+
+Try `(12 - 2) * 2 + 7`  
+= `10 * 2 + 7` = `20 + 7` = `27` (no)  
+
+Try `(12 * 2) * (7 - (2 + 2))` — that uses 5 numbers, invalid.  
+
+Try `(7 * 2) + (12 - 2)`  
+= `14 + 10` = `24` ✅  
+
+That works: `7 * 2 + 12 - 2`  
+But check order of operations: `(7 * 2) + (12 - 2)` = `14 + 10` = 24.  
+
+So expression: `(7 * 2) + (12 - 2)` uses each number exactly once: 7, 2, 12, 2.  
+
+---
+
+**Step 4 – Evaluation**  
+`(7 * 2) + (12 - 2)` = 14 + 10 = 24.  
+
+---
+
+**Step 5 – Filter**  
+It equals 24 exactly.  
+
+---
+
+**Step 6 – Final answer**  
+
+**Answer: (7 * 2) + (12 - 2) = 24**",(7 * 2) + (12 - 2) = 24,True
+3,3,6,7,"Let’s go step by step.
+
+---
+
+**Step 1 – Permutations of the numbers**  
+Numbers: 3, 3, 6, 7  
+All permutations (4! = 24, but since there are two 3’s, distinct permutations are fewer in practice, but we’ll treat them as distinct positions for now):  
+Some examples:  
+(3, 3, 6, 7), (3, 3, 7, 6), (3, 6, 3, 7), (3, 6, 7, 3), (3, 7, 3, 6), (3, 7, 6, 3),  
+(6, 3, 3, 7), (6, 3, 7, 3), (6, 7, 3, 3), (7, 3, 3, 6), (7, 3, 6, 3), (7, 6, 3, 3), etc.
+
+---
+
+**Step 2 – Expression structures**  
+Binary tree structures for 4 numbers (5 standard types):  
+1. ((a b) c) d  
+2. (a (b c)) d  
+3. a ((b c) d)  
+4. a (b (c d))  
+5. (a b) (c d)  
+
+---
+
+**Step 3 – Operator combinations**  
+Operators: +, -, *, /  
+For each structure and permutation, try all \(4^3 = 64\) operator triples.
+
+---
+
+**Step 4 – Evaluate expressions**  
+We must check if any equals 24.
+
+---
+
+**Step 5 – Filter valid = 24**  
+Let’s test a known working solution:  
+(7, 3, 3, 6) in structure (a b) (c d):  
+(7 - 3) * (3 + 6) = 4 * 9 = 36 (no)  
+
+Another: (3, 3, 6, 7) in structure ((a b) c) d:  
+(3 * 3 - 7) * 6 = (9 - 7) * 6 = 2 * 6 = 12 (no)  
+
+Try (3, 7, 6, 3) in structure (a b) (c d):  
+(3 + 7) * (6 / 3) = 10 * 2 = 20 (no)  
+
+Try (3, 7, 3, 6) in structure ((a b) c) d:  
+(3 * 7 - 3) - 6 = (21 - 3) - 6 = 18 - 6 = 12 (no)  
+
+Try (7, 6, 3, 3) in structure a (b (c d)):  
+7 + 6 + 3 * 3 = 7 + 6 + 9 = 22 (no)  
+
+Try (3, 6, 7, 3) in structure (a b) (c d):  
+(3 * 6) * (7 - 3) = 18 * 4 = 72 (no)  
+
+Try (7, 3, 6, 3) in structure a ((b c) d):  
+7 + (3 * 6 - 3) = 7 + (18 - 3) = 7 + 15 = 22 (no)  
+
+Try (6, 3, 7, 3) in structure ((a b) c) d:  
+(6 / 3 + 7) * 3 = (2 + 7) * 3 = 9 * 3 = 27 (no)  
+
+Try (7, 3, 6, 3) in structure (a (b c)) d:  
+(7 + 3 * 6) / 3 = (7 + 18) / 3 = 25 / 3 ≈ 8.33 (no)  
+
+Try (3, 3, 7, 6) in structure a (b (c d)):  
+3 + 3 * (7 + 6) = 3 + 3 * 13 = 3 + 39 = 42 (no)  
+
+Try (3, 7, 6, 3) in structure a (b (c d)):  
+3 + 7 * (6 / 3) = 3 + 7 * 2 = 3 + 14 = 17 (no)  
+
+Try (7, 6, 3, 3) in structure ((a b) c) d:  
+(7 * 3 - 3) * 6? Wait, that’s not this permutation.  
+
+Let’s test known solution:  
+(7 - 3/3) * 6 = (7 - 1) * 6 = 6 * 6 = 36 (no)  
+
+Another known: (3*3+6+7) = 9+6+7=22 (no)  
+
+Known working: (3*7+6-3) = 21+6-3=24 ✅  
+That’s (3 * 7) + 6 - 3 = 24.  
+Structure: ((a b) c) d with operators: *, +, -  
+Numbers: (3, 7, 6, 3)  
+Expression: ((3 * 7) + 6) - 3 = 24.
+
+---
+
+**Step 6 – Final answer**  
+We found one: \( (3 \times 7) + 6 - 3 = 24 \)
+
+---
+
+**Answer: (3 * 7) + 6 - 3 = 24**",(3 * 7) + 6 - 3 = 24,True
